@@ -1,0 +1,145 @@
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>YGWG of AGA- Userspace</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script type="text/javascript" th:src="@{/ref/jquery.min.js}"></script>
+    <link rel="stylesheet" th:href="@{ref/bootstrap/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/ref/animate.min.css}">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" th:href="@{/css/universal.css}">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script type="text/javascript" th:src="@{/ref/bootstrap/bootstrap.min.css}"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <script type="text/javascript" th:src="@{/ref/bootstrap/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+    <script type="text/javascript" th:src="@{/js/userspace.js}"></script>
+</head>
+
+<body >
+
+<!--logo标题-->
+<div class="row" style="margin:auto;" >
+    <div class="col-xs-12 logo" style="text-align: center;padding-top: 1%;"><a th:href="@{/index.html}" ><img
+            class="Title" th:src="@{/img/logo/KeyLogo.png}" ></a></div>
+    <br>
+    <div class="col-xs-12 text-center logo" style="padding-bottom: 1%;">
+        <p style="font-size:1.3rem;color: black;">Young Geographer Working Group (YGWG) of<br>
+            Asian Geographical Association (AGA)</p>
+    </div>
+</div>
+
+<!--导航条-->
+<div  class="row" style="margin: auto;">
+    <nav class="navbar navbar-default" id="headnav">
+        <!--创建一个bootstrap全屏布局-->
+        <div class="container-fluid">
+            <!--创建一个bootstrapLOGO布局-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navigationBar " aria-expanded="false">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!--创建导航条元素布局-->
+            <div class="row">
+                <div class="collapse navbar-collapse col-md-offset-2" id="navigationBar">
+                    <ul class="nav navbar-nav text-center" style="font-size: 0.8rem;">
+                        <!--data-href中不可出现除字母数字外的其他字符-->
+                        <li class="nav-item">
+                            <a id="comebackhome" th:href="@{/index.html}" class="nav-link" data-href="#">←Home</a>
+                        </li>
+                        <li style="position: absolute;margin:auto;top:0;left: 0;bottom: 0;right:0;line-height:0px; height:0px;font-size:30px;font-weight: bold;color:white">
+                            User Space
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</div>
+
+<!--user space-->
+<div class="row" style="margin: auto">
+    <div class="col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-11"  id="userspace" style="padding-top: 1.5rem">
+
+        <div class="col-sm-5 col-xs-10 text-center "  style="border: 0.01rem dotted #333333;border-radius: 0.5rem;"  id="info">
+                <h3 class="text-center" style="font-weight: bolder">Personal Information</h3>
+                    <hr>
+                    <div class="col-md-6 col-xs-6 lable-p" style="line-height: 2rem" >
+                        <p>Name:</p>
+                        <p>Email:</p>
+<!--                        <p>Member register time:</p>-->
+                        <p>Member Status:</p>
+<!--                        <p>Membership expiration time:</p>-->
+<!--                        <p>is over expiration time:</p>-->
+                    </div>
+                    <div class="col-md-6 col-xs-6  " style="font-size: 0.8rem;line-height: 2rem">
+                    <p  id="spacename" th:text="${session.userName}"></p>
+                    <p th:text="${session.userEmail}"></p>
+<!--                    <p th:text="${session.registerTime}"></p>-->
+                    <p th:text="${session.ismember}"></p>
+<!--                    <p th:text="${session.overDate}"></p>-->
+<!--                    <p th:text="${session.isoverDate}"></p>-->
+
+                </div>
+        </div>
+
+        <div class="col-xs-1"></div>
+
+        <div class="col-sm-5 col-xs-10 text-center"  style="border: 0.01rem dotted #333333;border-radius: 0.5rem;"  id="setting">
+            <h3 class="text-center" style="font-weight: bolder">Personal Setting</h3>
+            <hr>
+            <div id="member" class="col-md-8">
+                <input  id="userinputid" type="text" class=" form-control" style="height: 2rem"
+                       placeholder="Please enter your member ID!"/>
+
+            </div>
+
+                <button class="bg-info" style="display:inline-block;border-width: 0.01rem; font-size: 0.8rem;margin-top: 0.4rem" id="btn-inputid">Submit</button><br>
+            <div class="col-md-8" style="padding-top: 0.4rem;padding-bottom: 0.4rem">
+                <span id="inputidinfo" style="color: red;font-size: 0.7rem;"></span>
+
+            </div>
+            <div class="col-md-8">
+                <span style="font-size: 0.8rem">Tip:Click <a href="doc/YGWG Membership application form.docx" style="cursor: pointer">here</a> to apply for membership</span>
+            </div>
+            <hr style="margin-bottom: 0.5rem;margin-top: 0.2rem">
+
+            <div class="col-md-5 lable-p" >
+                <button class="bg-info" style="border-width: 0.01rem; font-size: 0.8rem;" id="btn-logout">Log out</button>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+
+
+<!-- foot1 -->
+<!--style="position: absolute;bottom: 0;margin: auto;width: 100%;"-->
+<footer >
+    <br><br><br><br><br>
+
+    <!-- foot2 -->
+    <div class='container-fluid footer-container text-center ' style="background-color: #201f23;" >
+        <span style="font-family:arial; color: white;font-size: 0.8rem;">Copyright &copy;2020 NNU</span>
+        <div class="text-center"><a href="http://en.njnu.edu.cn/ " target="_blank" style="color: white;font-size: 0.8rem;">http://en.njnu.edu.cn/</a></div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+@font-face
+{
+	font-family: lato-light;
+	src: url('../font/lato-light.woff');
+}
+@font-face {
+	font-family: 'Lato';
+
+	src: url('../font/Lato/glyphicons-halflings-regular.woff2');
+	
+  }
+
+
+
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+
+
+
+
+body
+{
+  padding:0px;
+  margin:0px;
+  font-family:lato-light , "Segoe UI", Arial, "Microsoft Yahei", sans-serif;
+}
+.green-bg{
+	background-color:#117450;
+	animation:green-bg 5s infinite alternate;
+	-moz-animation:green-bg 5s infinite alternate;
+	-webkit-animation:green-bg 5s infinite alternate;
+	-o-animation:green-bg 5s infinite alternate;
+}
+
+
+.white-bg{
+	background-color:white;
+	animation:white-bg 5s infinite alternate;
+	-moz-animation:white-bg 5s infinite alternate;
+	-webkit-animation:white-bg 5s infinite alternate;
+	-o-animation:white-bg 5s infinite alternate;
+}
+
+
+
+.m-center
+{
+	line-height: 1.5rem;
+}
+
+/* .m-fsz{
+	font-size: larger;
+} */
+
+.home-h{
+	font-size: larger;
+	font-weight: bolder;
+	
+}
+.cos-modal{
+	font-size: 1rem;
+}
+.cos-modal2{
+	font-size: 0.8rem;
+	float: left;
+	width: 100%;
+}
+
+.home-ha{
+	cursor: pointer;
+}
+.home-date{
+	font-weight: bold; 
+	color: grey;
+}
+
+.event-mg{
+	margin-left: 35px;
+}
+
+
+.listgroup>li>a{
+	text-decoration: none;
+	color: black;
+	font-weight: 1.2rem;
+	font-size: 1rem;
+	cursor: pointer;
+}
+.listgroup{
+	list-style-type: none;   /* 去掉每个 ul 和 li 前面的圆点 */
+}
+.listgroup>li.active>a{
+	font-weight: bolder;
+}
+
+.img-responsive {
+	display: block;
+    margin-right: auto;
+	margin-left: auto;
+	margin-top: auto;
+	max-width: 100%;
+  }
+div{
+	word-break: break-word;
+	text-align: justify;
+}
+
+.lable-p{
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+.line-bottom{
+	text-decoration: underline;
+}
+.stronglabel{
+	width: 5rem;
+}
+
+
+
+
+
+
+
+@keyframes white-bg
+{
+	form{background-color:#ffffff;}
+	to{background-color:white;}
+}
+@-moz-keyframes white-bg
+{
+	form{background-color:white;}
+	to{background-color:white;}
+}
+@-webkit-keyframes white-bg
+{
+	form{background-color:white;}
+	to{background-color:white;}
+}
+@-o-keyframes white-bg
+{
+	form{background-color:white;}
+	to{background-color:white;}
+}

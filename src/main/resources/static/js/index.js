@@ -54,13 +54,11 @@ $(".nav-item").click(function(){
   }
 });
 
-
-$(".dropdown-menu>li").click(function(){
-    nav_click();
-    $($(this).parents("li")).addClass("active");
-    $($(this).children('a').data("href")).fadeIn();
-    document.getElementsByTagName("title")[0].innerText=this.innerText.trim()+ " - YGWG ";
-});
+    $(".navbar-nav>.dropdown").click(function (){
+        nav_click();
+        $($(this).children("a").data("href")).fadeIn();
+        console.log($(this).children("a"));
+    })
 
 
 function newsjunmp(){
@@ -73,6 +71,16 @@ $(".home-ha").click(function(){
     newsjunmp();
     $(this).trigger("click");
 });
+
+    $(".dropdown-menu>li").on("click",function (e) {
+        e.stopPropagation();  //防止向父节点
+        nav_click();
+        $($(this).parents("li")).addClass("active");
+        $($(this).children('a').data("href")).fadeIn();
+        document.getElementsByTagName("title")[0].innerText=this.innerText.trim()+ " - YGWG ";
+
+
+    })
 
 
 function  jump(){

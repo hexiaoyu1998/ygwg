@@ -24,458 +24,482 @@
 </head>
 <!--<button id="test"></button>-->
 <body  style="overflow-x:hidden;">
-    <div class="row" style="margin:auto;" >
-        <div class="col-xs-12 logo" style="text-align: center;padding-top: 1%;"><a href="http://www.aga-ygwg.com/"><img
-                    class="Title" th:src="@{img/logo/KeyLogo.png}" ></a></div>
-        <br>
-        <div class="col-xs-12 text-center logo" style="padding-bottom: 1%;">
-            <p style="font-size:1.3rem;color: black;">Young Geographer Working Group (YGWG)<br>
-                Asian Geographical Association (AGA)</p>
+<div class="row" style="margin:auto;" >
+    <div class="col-xs-12 logo" style="text-align: center;padding-top: 1%;"><a href="http://www.aga-ygwg.com/"><img
+            class="Title" th:src="@{img/logo/KeyLogo.png}" ></a></div>
+    <br>
+    <div class="col-xs-12 text-center logo" style="padding-bottom: 1%;">
+        <p style="font-size:1.3rem;color: black;">Young Geographer Working Group (YGWG)<br>
+            Asian Geographical Association (AGA)</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-default" id="headnav" style="margin:auto;">
+    <!--创建一个bootstrap全屏布局-->
+    <div class="container-fluid">
+        <!--创建一个bootstrapLOGO布局-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navigationBar " aria-expanded="false">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <!--创建导航条元素布局-->
+        <div class="row " >
+            <div class="collapse navbar-collapse col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" id="navigationBar" >
+                <ul class="nav navbar-nav" style="font-size: 0.8rem;" >
+                    <!--data-href中不可出现除字母数字外的其他字符-->
+                    <li class="nav-item active" id="nav1"> <a class="nav-link" data-href="#Home">&nbsp;Home&nbsp;</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-href="#AboutUs">&nbsp;About Us&nbsp;</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-href="#BoardMembers">&nbsp;Board Members&nbsp;</a>
+                    </li>
+                    <!-- <li class="nav-item" id="nav2"> <a class="nav-link" data-href="#Events"> &nbsp;Events&nbsp; </a>
+                    </li> -->
+                    <li class="dropdown" id="drpd-active" style="cursor: pointer">
+                        <a data-href="#News" data-toggle="dropdown">&nbsp;Events&nbsp;</a>
+                        <ul class = "dropdown-menu" >
+                            <li><a data-href="#News"> News </a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a data-href="#otherinformation"> Other Information </a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"> <a class="nav-link" data-href="#Awards">&nbsp;Awards&nbsp;</a>
+                    </li>
+
+                    <li class="dropdown" style="cursor: pointer">
+                        <a data-href="#Journals" data-toggle="dropdown">&nbsp;Publications&nbsp;</a>
+                        <ul class = "dropdown-menu" >
+                            <li><a data-href="#Journals"> Journals </a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a data-href="#specialissue">Special Issue</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a data-href="#memberspaper"> Members' Papers </a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"> <a class="nav-link" data-href="#JobsOpportunities">&nbsp;Jobs & Opportunities&nbsp; </a>
+                    </li>
+                    <!--                        <li class="nav-item"> <a class="nav-link" data-href="#JoinUs">&nbsp;Join Us&nbsp;</a></li>-->
+                    <li class="dropdown" style="cursor: pointer">
+                        <a  data-href="#Membership" data-toggle="dropdown" id="drpd2" > Join Us </a>
+                        <ul class="dropdown-menu">
+                            <li><a data-href="#Membership"> Membership </a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a id="userentrance" th:href="@{log.html}"> Login </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" data-href="#ContactUs">&nbsp;Contact Us&nbsp;</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class='container-fluid content-container' style="margin:auto;line-height: 1.7rem;padding-top: 2%;">
+
+    <!--Home1-->
+    <div class="row" id="Home">
+
+        <!--轮播-->
+        <!-- <div id="myCarousel" data-ride="carousel" data-interval="2100"
+            class="carousel slide col-xs-7 col-xs-offset-2 margin-l " style="margin-top: -30px;">
+
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/Show/2.jpg" alt="First slide">
+                </div>
+                <div class="item">
+                    <img src="img/Show/1.jpg" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img src="img/Show/3.jpg" alt="Third slide">
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> -->
+
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" >
+
+            <h4 class="cos-strong">Vision of YGWG</h4>
+            <hr>
+            <div class="cos-modal"> The vision of Young Geographer Working Group (YGWG) of Asian Geographical
+                Association (AGA) is to bring together young geographers to foster a community for physical
+                geography, human geography, GIScience and related research, with strong links to environment, health
+                and sustainable development.
+                <br><br>
+            </div>
+        </div>
+
+
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" >
+            <br>
+            <h4 class="cos-strong">Latest News</h4>
+            <hr>
+            <div class="cos-modal" >
+                <strong class="home-h"><a style="color: #117450" class="home-ha">First online meeting of Young Geographer Working Group (YGWG) of AGA</a><br></strong>
+                <small class="home-date">June 27, 2020<br><br></small>
+                <img  th:src="@{/img/Events/first online meeting.png}" style="max-width: 100%;"><br><br>
+                <p>The First online meeting of Young Geographer Working Group (YGWG) of AGA,held on June 27,2020 in Zoom meeting,was a success.The meeting discussed:<br><br>
+                    1. Learn the background of establishing YGWG<br>
+                    2. Discuss the draft of YGWG (AGA) constitution<br>
+                    3. Discuss website content of YGWG<br>
+                    4. Plan future activities<br>
+                    <br>
+                    The abstract follows: <a class="home-ha">(more…)</a>
+                    <br><br></p>
+            </div>
+
+            <hr>
+            <div class="cos-modal" >
+                <strong class="home-h"><a style="color: #117450" class="home-ha" >A Position Paper on Open Web-Distributed Integrated Geographic Modelling and Simulation to Enable Broader Participation and Applications</a><br></strong>
+                <small class="home-date">JUNE 24, 2020<br><br></small>
+                <p>Chair of YGWG of AGA joined forces to write a position paper on Open Web-Distributed Integrated Geographic Modelling and Simulation to Enable Broader Participation and Applications.<br></p>
+                <p>The <a href="https://www.sciencedirect.com/science/article/pii/S0012825220302695" target="_blank" >paper</a> has appeared on the Elsevier journal Earth-Science Reviews and it is open access.</p>
+                <p>The abstract follows: <a class="home-ha">(more…)</a></p>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <!-- AboutUs2 -->
+    <div class="row" id="AboutUs">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">Mission of YGWG</h4>
+            <hr>
+            <div class="cos-modal">
+
+                <div class="cos-strong2">The working team will develop a medium-term research agenda for the
+                    working
+                    group, which will serve as the guideline for working group events and for community members
+                    to
+                    share ideas and research findings. Specifically,<br><br>
+                </div>
+
+                <ul>
+                    <li>Develop and maintain connections and joint efforts with other AGA groups as well as
+                        other
+                        related GIScience and geographic academic organizations.
+                    </li>
+                    <li>Organize special sessions and workshops in AGA conferences as well as other GIScience,
+                        or
+                        geography conferences, in accordance with the research agenda.
+                    </li>
+                    <li>Collaborate with commissions within AGA or other academic associations to organize joint
+                        workshops on topics of shared interest.
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <br />
+            <br />
+
+            <h4 class="cos-strong">Structure of YGWG</h4>
+            <hr>
+            <div class="cos-modal">
+                <p>
+                    The YGWG consists of a team (chair, secretary, and regional contact persons) and members.
+                    The
+                    secretary and regional contact persons will be nominated by the chair and elected through a
+                    meeting or online voting. There will be a board committee that will work with the chair and
+                    secretary to manage the group.
+                </p>
+                <br>
+                <img  class="img-responsive" src="img\Content\AY3_1.png">
+                <br />
+                <br />
+                <p>
+                    All these positions are appointed for a period of four years. The appointment of the
+                    positions
+                    can be terminated mid-term for non-performance, or unsatisfactory performance, of duties.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <br>
+            <br>
+
+            <h4 class="cos-strong">Regional Divisions</h4>
+            <hr>
+            <div class="cos-modal">
+
+                <div class="cos-strong2">The regions of YGWG are settled in accordance with AGA’s divisions. A
+                    tentative division of regions is as follows:<br><br>
+                </div>
+
+                <ul>
+                    <li>Region 1: Japan, Korea, Mongolia</li>
+                    <li>Region 2: Kazakhstan, Kyrgyzstan, Tajikistan, Uzbekistan</li>
+                    <li>Region 3: Turkey, Israel, Iran, Azerbaijan</li>
+                    <li>Region 4: India, Pakistan, Bangladesh, Nepal, Sri Lanka</li>
+                    <li>Region 5: Vietnam, Cambodia, Thailand, Indonesia, Philippines, Malaysia</li>
+                    <li>Region 6: China, Hong Kong SAR of China, Macau SAR of China</li>
+                </ul>
+                <br>
+                <br>
+                <br>
+
+            </div>
         </div>
     </div>
 
-    <nav class="navbar navbar-default" id="headnav" style="margin:auto;">
-        <!--创建一个bootstrap全屏布局-->
-        <div class="container-fluid">
-            <!--创建一个bootstrapLOGO布局-->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#navigationBar " aria-expanded="false">
-                    <span class="sr-only">切换导航</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!--创建导航条元素布局-->
-            <div class="row " >
-                <div class="collapse navbar-collapse col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" id="navigationBar" >
-                    <ul class="nav navbar-nav" style="font-size: 0.8rem;" >
-                        <!--data-href中不可出现除字母数字外的其他字符-->
-                        <li class="nav-item active" id="nav1"> <a class="nav-link" data-href="#Home">&nbsp;Home&nbsp;</a> </li>
-                        <li class="nav-item"> <a class="nav-link" data-href="#AboutUs">&nbsp;About Us&nbsp;</a> </li>
-                        <li class="nav-item"> <a class="nav-link" data-href="#BoardMembers">&nbsp;Board Members&nbsp;</a>
-                        </li>
-                        <!-- <li class="nav-item" id="nav2"> <a class="nav-link" data-href="#Events"> &nbsp;Events&nbsp; </a>
-                        </li> -->
-                        <li class="dropdown" id="drpd-active" style="cursor: pointer">
-                            <a data-href="#News" data-toggle="dropdown">&nbsp;Events&nbsp;</a>
-                            <ul class = "dropdown-menu" >
-                                <li><a data-href="#News"> News </a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a data-href="#otherinformation"> Other Information </a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item"> <a class="nav-link" data-href="#Awards">&nbsp;Awards&nbsp;</a>
-                        </li>
-
-                        <li class="dropdown" style="cursor: pointer">
-                            <a data-href="#Journals" data-toggle="dropdown">&nbsp;Publications&nbsp;</a>
-                            <ul class = "dropdown-menu" >
-                                <li><a data-href="#Journals"> Journals </a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a data-href="#specialissue">Special Issue</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a data-href="#memberspaper"> Members' Papers </a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item"> <a class="nav-link" data-href="#JobsOpportunities">&nbsp;Jobs & Opportunities&nbsp; </a>
-                        </li>
-<!--                        <li class="nav-item"> <a class="nav-link" data-href="#JoinUs">&nbsp;Join Us&nbsp;</a></li>-->
-                        <li class="dropdown" style="cursor: pointer">
-                            <a  data-href="#Membership" data-toggle="dropdown" id="drpd2" > Join Us </a>
-                            <ul class="dropdown-menu">
-                                <li><a data-href="#Membership"> Membership </a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a id="userentrance" th:href="@{log.html}"> Login </a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"> <a class="nav-link" data-href="#ContactUs">&nbsp;Contact Us&nbsp;</a> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class='container-fluid content-container' style="margin:auto;line-height: 1.7rem;padding-top: 2%;">
-
-        <!--Home1-->
-        <div class="row" id="Home">
-
-            <!--轮播-->
-            <!-- <div id="myCarousel" data-ride="carousel" data-interval="2100"
-                class="carousel slide col-xs-7 col-xs-offset-2 margin-l " style="margin-top: -30px;">
-
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="img/Show/2.jpg" alt="First slide">
-                    </div>
-                    <div class="item">
-                        <img src="img/Show/1.jpg" alt="Second slide">
-                    </div>
-                    <div class="item">
-                        <img src="img/Show/3.jpg" alt="Third slide">
-                    </div>
-                </div>
-
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div> -->
-
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" >
-
-              <h4 class="cos-strong">Vision of YGWG</h4>
-              <hr>
-              <div class="cos-modal"> The vision of Young Geographer Working Group (YGWG) of Asian Geographical
-                  Association (AGA) is to bring together young geographers to foster a community for physical
-                  geography, human geography, GIScience and related research, with strong links to environment, health
-                  and sustainable development.
-                  <br><br>
-              </div>
-          </div>
-
-
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" >
-              <br>
-              <h4 class="cos-strong">Latest News</h4>
-              <hr>
-                <div class="cos-modal" >
-                    <strong class="home-h"><a style="color: #117450" class="home-ha">First online meeting of Young Geographer Working Group (YGWG) of AGA</a><br></strong>
-                    <small class="home-date">June 27, 2020<br><br></small>
-                    <img  th:src="@{/img/Events/first online meeting.png}" style="max-width: 100%;"><br><br>
-                    <p>The First online meeting of Young Geographer Working Group (YGWG) of AGA,held on June 27,2020 in Zoom meeting,was a success.The meeting discussed:<br><br>
-                      1. Learn the background of establishing YGWG<br>
-                      2. Discuss the draft of YGWG (AGA) constitution<br>
-                      3. Discuss website content of YGWG<br>
-                      4. Plan future activities<br>
-                      <br>
-                       The abstract follows: <a class="home-ha">(more…)</a>
-                        <br><br></p>
-                </div>
-
-                <hr>
-                <div class="cos-modal" >
-                  <strong class="home-h"><a style="color: #117450" class="home-ha" >A Position Paper on Open Web-Distributed Integrated Geographic Modelling and Simulation to Enable Broader Participation and Applications</a><br></strong>
-                  <small class="home-date">JUNE 24, 2020<br><br></small>
-                  <p>Chair of YGWG of AGA joined forces to write a position paper on Open Web-Distributed Integrated Geographic Modelling and Simulation to Enable Broader Participation and Applications.<br></p>
-                  <p>The <a href="https://www.sciencedirect.com/science/article/pii/S0012825220302695" target="_blank" >paper</a> has appeared on the Elsevier journal Earth-Science Reviews and it is open access.</p>
-                  <p>The abstract follows: <a class="home-ha">(more…)</a></p>
-              </div>
-
-            </div>
-
-
-
-
-        </div>
-
-        <!-- AboutUs2 -->
-        <div class="row" id="AboutUs">
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">Mission of YGWG</h4>
-                <hr>
-                <div class="cos-modal">
-
-                    <div class="cos-strong2">The working team will develop a medium-term research agenda for the
-                        working
-                        group, which will serve as the guideline for working group events and for community members
-                        to
-                        share ideas and research findings. Specifically,<br><br>
-                    </div>
-
-                    <ul>
-                        <li>Develop and maintain connections and joint efforts with other AGA groups as well as
-                            other
-                            related GIScience and geographic academic organizations.
-                        </li>
-                        <li>Organize special sessions and workshops in AGA conferences as well as other GIScience,
-                            or
-                            geography conferences, in accordance with the research agenda.
-                        </li>
-                        <li>Collaborate with commissions within AGA or other academic associations to organize joint
-                            workshops on topics of shared interest.
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <br />
-                <br />
-
-                <h4 class="cos-strong">Structure of YGWG</h4>
-                <hr>
-                <div class="cos-modal">
-                    <p>
-                        The YGWG consists of a team (chair, secretary, and regional contact persons) and members.
-                        The
-                        secretary and regional contact persons will be nominated by the chair and elected through a
-                        meeting or online voting. There will be a board committee that will work with the chair and
-                        secretary to manage the group.
-                    </p>
-                    <br>
-                    <img  class="img-responsive" src="img\Content\AY3_1.png">
-                    <br />
-                    <br />
-                    <p>
-                        All these positions are appointed for a period of four years. The appointment of the
-                        positions
-                        can be terminated mid-term for non-performance, or unsatisfactory performance, of duties.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <br>
-                <br>
-
-                <h4 class="cos-strong">Regional Divisions</h4>
-                <hr>
-                <div class="cos-modal">
-
-                    <div class="cos-strong2">The regions of YGWG are settled in accordance with AGA’s divisions. A
-                        tentative division of regions is as follows:<br><br>
-                    </div>
-
-                    <ul>
-                        <li>Region 1: Japan, Korea, Mongolia</li>
-                        <li>Region 2: Kazakhstan, Kyrgyzstan, Tajikistan, Uzbekistan</li>
-                        <li>Region 3: Turkey, Israel, Iran, Azerbaijan</li>
-                        <li>Region 4: India, Pakistan, Bangladesh, Nepal, Sri Lanka</li>
-                        <li>Region 5: Vietnam, Cambodia, Thailand, Indonesia, Philippines, Malaysia</li>
-                        <li>Region 6: China, Hong Kong SAR of China, Macau SAR of China</li>
-                    </ul>
-                    <br>
-                    <br>
-                    <br>
-
-                </div>
-            </div>
-        </div>
-
-        <!--BoardMembers3-->
-        <div class="row " id="BoardMembers">
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 ">
-                <h4 class="cos-strong">Chair and Secretary</h4>
+    <!--BoardMembers3-->
+    <div class="row " id="BoardMembers">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 ">
+            <h4 class="cos-strong">Chair and Secretary</h4>
             <hr>
 
-                <div class="cos-modal2 col-12" >
-                    <br>
+            <div class="cos-modal2 col-12" >
+                <br>
                 <div class="col-md-3 col-xs-12" >
 
-                <img  class="img-responsive" src="img/Members/MinChen.jpg" >
-                <br>
+                    <img  class="img-responsive" src="img/Members/MinChen.jpg" >
+                    <br>
                 </div>
                 <div class="m-fsz col-md-9 col-xs-12 m-center">
 
                     <strong>Prof. Min Chen</strong><br>
                     <strong>Chair of YGWG of AGA</strong>
                     <p>PhD, Professor <br>
-                    Nanjing Normal University, China<br>
-                    Links:<a href="http://schools.njnu.edu.cn/geog/person/min-chen" target="_blank" style="color: orange;">http://schools.njnu.edu.cn/geog/person/min-chen</a><br>
-                    Email:<a href="mailto:chenmin0902@163.com" style="color: orange;"> chenmin0902@163.com	</a><br>
+                        Nanjing Normal University, China<br>
+                        Links:<a href="http://schools.njnu.edu.cn/geog/person/min-chen" target="_blank" style="color: orange;">http://schools.njnu.edu.cn/geog/person/min-chen</a><br>
+                        Email:<a href="mailto:chenmin0902@163.com" style="color: orange;"> chenmin0902@163.com	</a><br>
                     </p>
                     <br>
 
                 </div>
-                </div>
+            </div>
 
-                <div class="col-12 cos-modal2">
-                    <hr>
-                    <br>
-                <div class="col-md-3 col-xs-12 " >
-                <img class="img-responsive" src="img/Members/LiHe.png">
+            <div class="col-12 cos-modal2">
+                <hr>
                 <br>
+                <div class="col-md-3 col-xs-12 " >
+                    <img class="img-responsive" src="img/Members/LiHe.png">
+                    <br>
                 </div>
                 <div class="m-fsz col-md-9 col-xs-12 m-center">
                     <strong>Dr. Li He</strong><br>
                     <strong>Secretary of YGWG of AGA</strong>
                     <p>PhD, Associate Professor <br>
-                    Xi’an Jiaotong University, China<br>
-                    Links:<a href="http://rwxy.xjtu.edu.cn/info/1091/6259.htm" target="_blank" style="color: orange;">http://rwxy.xjtu.edu.cn/info/1091/6259.htm</a><br>
-                    Email:<a href="mailto:lihegeo@xjtu.edu.cn" style="color: orange;"> lihegeo@xjtu.edu.cn	</a><br>
+                        Xi’an Jiaotong University, China<br>
+                        Links:<a href="http://rwxy.xjtu.edu.cn/info/1091/6259.htm" target="_blank" style="color: orange;">http://rwxy.xjtu.edu.cn/info/1091/6259.htm</a><br>
+                        Email:<a href="mailto:lihegeo@xjtu.edu.cn" style="color: orange;"> lihegeo@xjtu.edu.cn	</a><br>
                     </p>
                     <br>
                 </div>
-                </div>
-
             </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 ">
-                <h4 class="cos-strong">Board Member (Alphabetically ordered by last name)</h4>
+        </div>
 
-                <div class="col-12 cos-modal2">
-                    <hr>
-                    <br>
-                    <div class="col-md-3 col-xs-12" >
-                        <img class="img-responsive" src="img/Members/DhritirajSengupta.jpg">
-                        <br>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-                        <strong>Dr. Dhritiraj Sengupta</strong><br>
 
-                        <p>PhD, Post-Doc Fellow<br>
-                            State Key Laboratory of Estuarine and Coastal Research, East China Normal University, China
-                            SC member of the IGU Commission on Coastal System (http://igu-coast.org/Committee.html)<br>
-                            Links:<a href="https://www.linkedin.com/in/dhritiraj-sengupta-ph-d-682648167" target="_blank" style="color: orange;">https://www.linkedin.com/in/dhritiraj-sengupta-ph-d-682648167</a><br>
-                            Email:<a href="mailto:dhritiraj@sklec.ecnu.edu.cn" style="color: orange;"> dhritiraj@sklec.ecnu.edu.cn </a><br>
-                        </p>
-                        <br>
-                    </div>
-                </div>
 
-                <div class="col-12 cos-modal2">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 ">
+            <h4 class="cos-strong">Board Member (Alphabetically ordered by last name)</h4>
+
+            <div class="col-12 cos-modal2">
                 <hr>
                 <br>
                 <div class="col-md-3 col-xs-12" >
-                <img class="img-responsive" src="img/Members/ZhuoWu.jpg">
+                    <img class="img-responsive" src="img/Members/DhritirajSengupta.jpg">
+                    <br>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+                    <strong>Dr. Dhritiraj Sengupta</strong><br>
+
+                    <p>PhD, Post-Doc Fellow<br>
+                        State Key Laboratory of Estuarine and Coastal Research, East China Normal University, China
+                        SC member of the IGU Commission on Coastal System (http://igu-coast.org/Committee.html)<br>
+                        Links:<a href="https://www.linkedin.com/in/dhritiraj-sengupta-ph-d-682648167" target="_blank" style="color: orange;">https://www.linkedin.com/in/dhritiraj-sengupta-ph-d-682648167</a><br>
+                        Email:<a href="mailto:dhritiraj@sklec.ecnu.edu.cn" style="color: orange;"> dhritiraj@sklec.ecnu.edu.cn </a><br>
+                    </p>
+                    <br>
+                </div>
+            </div>
+
+            <div class="col-12 cos-modal2">
+                <hr>
                 <br>
+                <div class="col-md-3 col-xs-12" >
+                    <img class="img-responsive" src="img/Members/ZhuoWu.jpg">
+                    <br>
                 </div>
                 <div class="m-fsz col-md-9 col-xs-12 m-center">
                     <strong>Dr. Zhuo Wu</strong><br>
                     <p>PhD, Assistant Professor <br>
-                    Guangzhou University, China<br>
-                    Links:<a href="http://geo.gzhu.edu.cn/info/1176/2196.htm" target="_blank" style="color: orange;">http://geo.gzhu.edu.cn/info/1176/2196.htm</a><br>
-                    Email:<a href="mailto:wuzhuo@gzhu.edu.cn" style="color: orange;"> wuzhuo@gzhu.edu.cn </a><br>
+                        Guangzhou University, China<br>
+                        Links:<a href="http://geo.gzhu.edu.cn/info/1176/2196.htm" target="_blank" style="color: orange;">http://geo.gzhu.edu.cn/info/1176/2196.htm</a><br>
+                        Email:<a href="mailto:wuzhuo@gzhu.edu.cn" style="color: orange;"> wuzhuo@gzhu.edu.cn </a><br>
                     </p>
                     <br>
                 </div>
-                </div>
-
-
             </div>
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 ">
-                <h4 class="cos-strong">Regional Contact Person</h4>
-                <div class="col-12 cos-modal2">
-                    <hr>
+
+
+        </div>
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 ">
+            <h4 class="cos-strong">Regional Contact Person</h4>
+            <div class="col-12 cos-modal2">
+                <hr>
+                <br>
+                <div class="col-md-3 col-xs-12" >
+                    <img class="img-responsive" src="img/Members/Suh-heeChoi.png">
                     <br>
-                    <div class="col-md-3 col-xs-12" >
-                        <img class="img-responsive" src="img/Members/Suh-heeChoi.png">
-                        <br>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-                        <strong>Dr. Suh-hee Choi</strong><br>
-                        <strong>Region 1’s contact person</strong>
-                        <p>PhD, Assistant Professor <br>
-                            Kyunghee University, South Korean<br>
-                            Links:<a href="http://geo.khu.ac.kr/contents/bbs/bbs_content.html?bbs_cls_cd=002001002001&cid=19050709262587&no=12&bbs_type=G" target="_blank" style="color: orange;">http://geo.khu.ac.kr/contents/bbs/bbs_content.html?bbs_cls_cd=002001002001&cid=19050709262587&no=12&bbs_type=G</a><br>
-                            Email:<a href="mailto:suhhee@khu.ac.kr" style="color: orange;"> suhhee@khu.ac.kr </a><br>
-                        </p>
-                        <br>
-                    </div>
                 </div>
-
-                <div class="col-12 cos-modal2">
-                    <hr>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+                    <strong>Dr. Suh-hee Choi</strong><br>
+                    <strong>Region 1’s contact person</strong>
+                    <p>PhD, Assistant Professor <br>
+                        Kyunghee University, South Korean<br>
+                        Links:<a href="http://geo.khu.ac.kr/contents/bbs/bbs_content.html?bbs_cls_cd=002001002001&cid=19050709262587&no=12&bbs_type=G" target="_blank" style="color: orange;">http://geo.khu.ac.kr/contents/bbs/bbs_content.html?bbs_cls_cd=002001002001&cid=19050709262587&no=12&bbs_type=G</a><br>
+                        Email:<a href="mailto:suhhee@khu.ac.kr" style="color: orange;"> suhhee@khu.ac.kr </a><br>
+                    </p>
                     <br>
-                    <div class="col-md-3 col-xs-12" >
-                        <img class="img-responsive" src="img/Members/Gulomjon Umirzakov.jpg">
-                        <br>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-                        <strong>Dr. Gulomjon Umirzakov</strong><br>
-                        <strong>Region 2’s contact person</strong>
-                        <p>PhD, Assistant Professor  <br>
-                            National University of Uzbekistan, Uzbekistan<br>
-                            Links:<a href="http://spa.nuu.uz/eng/staff/146" target="_blank" style="color: orange;">http://spa.nuu.uz/eng/staff/146</a><br>
-                            Email:<a href="mailto:g.umirzakov@gmail.com" style="color: orange;"> g.umirzakov@gmail.com </a><br>
-                        </p>
-                        <br>
-                    </div>
                 </div>
+            </div>
 
-                <div class="col-12 cos-modal2">
-                    <hr>
+            <div class="col-12 cos-modal2">
+                <hr>
+                <br>
+                <div class="col-md-3 col-xs-12" >
+                    <img class="img-responsive" src="img/Members/Gulomjon Umirzakov.jpg">
                     <br>
-                    <div class="col-md-3 col-xs-12" >
-                        <img class="img-responsive" src="img/Members/BerkehanBakir.png">
-                        <br>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-                        <strong>Mr. Berkehan Bakir</strong><br>
-                        <strong>Region 3’s contact person</strong><br>
-                        <p>
-                            Istanbul University, Turkey<br>
-                            Links:<a href="https://www.researchgate.net/profile/Berkehan_Bakir" target="_blank" style="color: orange;">https://www.researchgate.net/profile/Berkehan_Bakir</a><br>
-                            Email:<a href="mailto:brkhnbkr@gmail.com" style="color: orange;"> brkhnbkr@gmail.com </a><br>
-                        </p>
-                        <br>
-                    </div>
                 </div>
-
-                <div class="col-12 cos-modal2">
-                    <hr>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+                    <strong>Dr. Gulomjon Umirzakov</strong><br>
+                    <strong>Region 2’s contact person</strong>
+                    <p>PhD, Assistant Professor  <br>
+                        National University of Uzbekistan, Uzbekistan<br>
+                        Links:<a href="http://spa.nuu.uz/eng/staff/146" target="_blank" style="color: orange;">http://spa.nuu.uz/eng/staff/146</a><br>
+                        Email:<a href="mailto:g.umirzakov@gmail.com" style="color: orange;"> g.umirzakov@gmail.com </a><br>
+                    </p>
                     <br>
-                    <div class="col-md-3 col-xs-12" >
-                        <img class="img-responsive" src="img/Members/DebajitDatta.jpg">
-                        <br>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-                        <strong>Dr. Debajit Datta</strong><br>
-                        <strong>Region 4’s contact person</strong><br>
-                        <p>PhD, Assistant Professor<br>
-                            Jadavpur University, India<br>
-                            Links:<a href="https://www.researchgate.net/profile/Debajit_Datta" target="_blank" style="color: orange;">https://www.researchgate.net/profile/Debajit_Datta</a><br>
-                            Email:<a href="mailto:debajit.geo@gmail.com" style="color: orange;"> debajit.geo@gmail.com </a><br>
-                        </p>
-                        <br>
-                    </div>
                 </div>
+            </div>
 
-                <div class="col-12 cos-modal2">
-                    <hr>
+            <div class="col-12 cos-modal2">
+                <hr>
+                <br>
+                <div class="col-md-3 col-xs-12" >
+                    <img class="img-responsive" src="img/Members/BerkehanBakir.png">
                     <br>
-                    <div class="col-md-3 col-xs-12" >
-                        <img class="img-responsive" src="img/Members/Nguyen Van Hoang.jpg">
-                        <br>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-                        <strong>Dr. Nguyen Van Hoang</strong><br>
-                        <strong>Region 5’s contact person</strong><br>
-                        <p>PhD, Lecturer<br>
-                            University of Social Sciences & Humanities, Vietnam<br>
-                            Links:<a href="http://dulich.hcmussh.edu.vn/?ArticleId=4330b48f-28c5-48de-973c-7f407b87c9c3" target="_blank" style="color: orange;">http://dulich.hcmussh.edu.vn/?ArticleId=4330b48f-28c5-48de-973c-7f407b87c9c3</a><br>
-                            Email:<a href="mailto:ngvhoang@hcmussh.edu.vn" style="color: orange;"> ngvhoang@hcmussh.edu.vn </a><br>
-                        </p>
-                        <br>
-                    </div>
                 </div>
-
-                <div class="col-12 cos-modal2">
-                    <hr>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+                    <strong>Mr. Berkehan Bakir</strong><br>
+                    <strong>Region 3’s contact person</strong><br>
+                    <p>
+                        Istanbul University, Turkey<br>
+                        Links:<a href="https://www.researchgate.net/profile/Berkehan_Bakir" target="_blank" style="color: orange;">https://www.researchgate.net/profile/Berkehan_Bakir</a><br>
+                        Email:<a href="mailto:brkhnbkr@gmail.com" style="color: orange;"> brkhnbkr@gmail.com </a><br>
+                    </p>
                     <br>
-                    <div class="col-md-3 col-xs-12" >
-                        <img class="img-responsive" src="img/Members/XingHuang.png">
-                        <br>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-                        <strong>Dr. Xing Huang</strong><br>
-                        <strong>Region 6’s contact person</strong>
-                        <p>PhD, Associate Professor <br>
-                            South China University of Technology, China<br>
-                            Links:<a href="http://www2.scut.edu.cn/architecture/2017/0406/c2894a160772/page.htm" target="_blank" style="color: orange;">http://www2.scut.edu.cn/architecture/2017/0406/c2894a160772/page.htm</a><br>
-                            Email:<a href="mailto:huangxing57@scut.edu.cn" style="color: orange;"> 	huangxing57@scut.edu.cn </a><br>
-                        </p>
-                        <br>
-                    </div>
                 </div>
+            </div>
+
+            <div class="col-12 cos-modal2">
+                <hr>
+                <br>
+                <div class="col-md-3 col-xs-12" >
+                    <img class="img-responsive" src="img/Members/DebajitDatta.jpg">
+                    <br>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+                    <strong>Dr. Debajit Datta</strong><br>
+                    <strong>Region 4’s contact person</strong><br>
+                    <p>PhD, Assistant Professor<br>
+                        Jadavpur University, India<br>
+                        Links:<a href="https://www.researchgate.net/profile/Debajit_Datta" target="_blank" style="color: orange;">https://www.researchgate.net/profile/Debajit_Datta</a><br>
+                        Email:<a href="mailto:debajit.geo@gmail.com" style="color: orange;"> debajit.geo@gmail.com </a><br>
+                    </p>
+                    <br>
+                </div>
+            </div>
+
+            <div class="col-12 cos-modal2">
+                <hr>
+                <br>
+                <div class="col-md-3 col-xs-12" >
+                    <img class="img-responsive" src="img/Members/Nguyen Van Hoang.jpg">
+                    <br>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+                    <strong>Dr. Nguyen Van Hoang</strong><br>
+                    <strong>Region 5’s contact person</strong><br>
+                    <p>PhD, Lecturer<br>
+                        University of Social Sciences & Humanities, Vietnam<br>
+                        Links:<a href="http://dulich.hcmussh.edu.vn/?ArticleId=4330b48f-28c5-48de-973c-7f407b87c9c3" target="_blank" style="color: orange;">http://dulich.hcmussh.edu.vn/?ArticleId=4330b48f-28c5-48de-973c-7f407b87c9c3</a><br>
+                        Email:<a href="mailto:ngvhoang@hcmussh.edu.vn" style="color: orange;"> ngvhoang@hcmussh.edu.vn </a><br>
+                    </p>
+                    <br>
+                </div>
+            </div>
+
+            <div class="col-12 cos-modal2">
+                <hr>
+                <br>
+                <div class="col-md-3 col-xs-12" >
+                    <img class="img-responsive" src="img/Members/XingHuang.png">
+                    <br>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+                    <strong>Dr. Xing Huang</strong><br>
+                    <strong>Region 6’s contact person</strong>
+                    <p>PhD, Associate Professor <br>
+                        South China University of Technology, China<br>
+                        Links:<a href="http://www2.scut.edu.cn/architecture/2017/0406/c2894a160772/page.htm" target="_blank" style="color: orange;">http://www2.scut.edu.cn/architecture/2017/0406/c2894a160772/page.htm</a><br>
+                        Email:<a href="mailto:huangxing57@scut.edu.cn" style="color: orange;"> 	huangxing57@scut.edu.cn </a><br>
+                    </p>
+                    <br>
+                </div>
+            </div>
 
 
+        </div>
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 ">
+            <h4 class="cos-strong">Office Assistant</h4>
+            <hr>
+
+            <div class="cos-modal2 col-12" >
+                <br>
+                <div class="col-md-3 col-xs-12" >
+
+                    <img  class="img-responsive" src="img/Members/zhangkai.jpg" >
+                    <br>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+
+                    <strong>Kai Zhang</strong><br>
+                    <p>Ph.D. Candidate <br>
+                        Nanjing Normal University, China<br>
+                        Email:<a href="mailto:zhangk2g@163.com" style="color: orange;"> zhangk2g@163.com	</a><br>
+                    </p>
+                    <br>
+
+                </div>
             </div>
 
 
@@ -483,108 +507,112 @@
         </div>
 
 
-        <!--JoinUs4-->
-        <div class="row" id="Membership">
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">Membership</h4>
-                <hr>
-                <div class="cos-modal"> Members should be under the age of
-                    45. YGWG members have access to the following benefits of membership:
-                </div>
-                <div class="cos-modal">
-                    <ul>
-                        <li>Participation in all AGA conferences and awards competition;</li>
-                        <li>Joining the mailing list to receive updates;</li>
-                        <li>Free copies of AGA international reports presented to AGA assemblies and the published
-                            conference proceedings upon request;</li>
-                        <li>Access to training courses at times as the need is demonstrated and the financial support is
-                            available;</li>
-                        <li>Preferential treatment in exhibitions of AGA;</li>
-                        <li>The AGA may assist in sponsoring conferences, seminars and symposia in conjunction with
-                            affiliates, for instance, assistance may consist of the support of members of the Executive
-                            Committee of the AGA to attend and participate in the meeting.
-                        </li>
-                    </ul>
-                </div>
+
+    </div>
+
+
+    <!--JoinUs4-->
+    <div class="row" id="Membership">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">Membership</h4>
+            <hr>
+            <div class="cos-modal"> Members should be under the age of
+                45. YGWG members have access to the following benefits of membership:
+            </div>
+            <div class="cos-modal">
+                <ul>
+                    <li>Participation in all AGA conferences and awards competition;</li>
+                    <li>Joining the mailing list to receive updates;</li>
+                    <li>Free copies of AGA international reports presented to AGA assemblies and the published
+                        conference proceedings upon request;</li>
+                    <li>Access to training courses at times as the need is demonstrated and the financial support is
+                        available;</li>
+                    <li>Preferential treatment in exhibitions of AGA;</li>
+                    <li>The AGA may assist in sponsoring conferences, seminars and symposia in conjunction with
+                        affiliates, for instance, assistance may consist of the support of members of the Executive
+                        Committee of the AGA to attend and participate in the meeting.
+                    </li>
+                </ul>
+            </div>
+            <br><br>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">New Application&nbsp;/&nbsp;Renewal&nbsp;/&nbsp;Update</h4>
+            <hr>
+            <div class="cos-modal">Membership should be applied, renewed, and updated through an electronic
+                application form. <br><br>
+            </div>
+            <div class="cos-modal"> Applicants should fill the forms and email to the corresponding regional contact person and the secretary. We will email you a unique Member ID. If you have registered this site, you can link the Member ID to your account.<br><br>
+
+                You can renew your future membership online in the account.<br><br>
+
+                Please refer to below for the email addresses of all regional contact persons.
                 <br><br>
             </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">New Application&nbsp;/&nbsp;Renewal&nbsp;/&nbsp;Update</h4>
-                <hr>
-                <div class="cos-modal">Membership should be applied, renewed, and updated through an electronic
-                    application form. <br><br>
-                </div>
-                <div class="cos-modal"> Applicants should fill the forms and email to the corresponding regional contact person and the secretary. We will email you a unique Member ID. If you have registered this site, you can link the Member ID to your account.<br><br>
-
-                    You can renew your future membership online in the account.<br><br>
-
-                    Please refer to below for the email addresses of all regional contact persons.
-                    <br><br>
-                </div>
-
-                <div class="cos-modal">
-                    <p>Region 1. </p>
-                    <p class="col-xs-offset-1">suhhee@khu.ac.k<br>Dr. Suh-hee Choi<br>Kyunghee University, South
-                        Korean<br><br></p>
-                    <p>Region 2. </p>
-                    <p class="col-xs-offset-1">g.umirzakov@gmail.com<br>Dr. Gulomjon Umirzakov<br>National University of
-                        Uzbekistan, Uzbekistan<br><br></p>
-                    <p>Region 3. </p>
-                    <p class="col-xs-offset-1">brkhnbkr@gmail.com<br>Dr. Berkehan Bakir<br>Istanbul University,
-                        Turkey<br><br></p>
-                    <p>Region 4. </p>
-                    <p class="col-xs-offset-1">debajit.geo@gmail.com<br>Dr. Debajit Datta<br>Jadavpur University,
-                        India<br><br></p>
-                    <p>Region 5. </p>
-                    <p class="col-xs-offset-1">ngvhoang@hcmussh.edu.vn<br>Nguyen Van Hoang<br>University of Social
-                        Sciences & Humanities.Vietnam<br><br></p>
-                    <p>Region 6. </p>
-                    <p class="col-xs-offset-1">huangxing57@scut.edu.cn<br>Dr. Xing Huang<br>South China University of
-                        Technology, China<br><br></p>
-                        <i class="fa fa-paperclip"><a href="doc/YGWG Membership application form.docx"> Membership Application Form</a></i>
-                </div>
-
+            <div class="cos-modal">
+                <p>Region 1. </p>
+                <p class="col-xs-offset-1">suhhee@khu.ac.k<br>Dr. Suh-hee Choi<br>Kyunghee University, South
+                    Korean<br><br></p>
+                <p>Region 2. </p>
+                <p class="col-xs-offset-1">g.umirzakov@gmail.com<br>Dr. Gulomjon Umirzakov<br>National University of
+                    Uzbekistan, Uzbekistan<br><br></p>
+                <p>Region 3. </p>
+                <p class="col-xs-offset-1">brkhnbkr@gmail.com<br>Dr. Berkehan Bakir<br>Istanbul University,
+                    Turkey<br><br></p>
+                <p>Region 4. </p>
+                <p class="col-xs-offset-1">debajit.geo@gmail.com<br>Dr. Debajit Datta<br>Jadavpur University,
+                    India<br><br></p>
+                <p>Region 5. </p>
+                <p class="col-xs-offset-1">ngvhoang@hcmussh.edu.vn<br>Nguyen Van Hoang<br>University of Social
+                    Sciences & Humanities.Vietnam<br><br></p>
+                <p>Region 6. </p>
+                <p class="col-xs-offset-1">huangxing57@scut.edu.cn<br>Dr. Xing Huang<br>South China University of
+                    Technology, China<br><br></p>
+                <i class="fa fa-paperclip"><a href="doc/YGWG Membership application form.docx"> Membership Application Form</a></i>
             </div>
-
-           <!--  <div class="col-xs-7 col-xs-offset-2  ">
-                <h4 class="cos-strong">Member Database</h4>
-                <hr>
-                <div class="cos-modal">
-                    <p class="cos-strong2">YGWG of AGA Membership Database</p>
-                    <table class="table">
-                        <thead class="green-bg" style="color: white">
-                            <tr>
-                                <th>Member Name</th>
-                                <th>Title</th>
-                                <th>Organization</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Min Chen</th>
-                                <td>Professor</td>
-                                <td><strong>Nanjing Normal University</strong></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Li He</th>
-                                <td>Associate Professor</td>
-                                <td><strong>Xi’an Jiaotong University</strong></td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
-                </div>
-
-            </div> -->
-
 
         </div>
 
-        <!--Events-News-->
-        <div class="row" id="News">
-            <div class="col-12">
+        <!--  <div class="col-xs-7 col-xs-offset-2  ">
+             <h4 class="cos-strong">Member Database</h4>
+             <hr>
+             <div class="cos-modal">
+                 <p class="cos-strong2">YGWG of AGA Membership Database</p>
+                 <table class="table">
+                     <thead class="green-bg" style="color: white">
+                         <tr>
+                             <th>Member Name</th>
+                             <th>Title</th>
+                             <th>Organization</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <th scope="row">Min Chen</th>
+                             <td>Professor</td>
+                             <td><strong>Nanjing Normal University</strong></td>
+                         </tr>
+                         <tr>
+                             <th scope="row">Li He</th>
+                             <td>Associate Professor</td>
+                             <td><strong>Xi’an Jiaotong University</strong></td>
+                         </tr>
+
+                     </tbody>
+                 </table>
+
+             </div>
+
+         </div> -->
+
+
+    </div>
+
+    <!--Events-News-->
+    <div class="row" id="News">
+        <div class="col-12">
             <div class="col-md-1 col-md-offset-2 col-xs-4" >
                 <hr>
                 <h3 class="text-center" style="font-weight: bolder;">News List</h3>
@@ -598,710 +626,710 @@
             </div>
 
             <div class="col-md-7 col-xs-7" style="margin-left:1.5%;" >
-          <div id="2020">
-          <div id="June-First-online-meeting" class="cos-modal">
-              <strong>First online meeting of Young Geographer Working Group (YGWG) of AGA</strong><br>
-              <small class="home-date">JUNE 27, 2020<br></small>
-              <hr>
-              <br>
-              <img style="max-width: 100%;" src="img/Events/first online meeting.png">
-              <br><br>
-              <ul>
-                  <li>
-                      Location:Zoom meeting<br>
-                      Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 27, 2020<br>
-                      Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14:00 Beijing Time<br><br>
-                  </li>
-                  <li><strong>ATTENDANCE</strong><br>
-                      <p>
-                          Min Chen, Xuanzi Zhang, Dhritiraj Sengupta, Debajit Datta, Gulomjon Umirzakov, Nguyen Van
-                          Hoang,<br>
-                          Suh-hee Choi, Xing Huang, Zhuo Wu, Li He, Xiaoyu He<br><br>
-                      </p>
-                  </li>
-                  <li><strong>AGENDA ITEMS</strong><br>
-                      <p>
-                          1. Learn the background of establishing YGWG<br>
-                          2. Discuss the draft of YGWG (AGA) constitution<br>
-                          3. Discuss website content of YGWG<br>
-                          4. Plan future activities<br><br>
-                      </p>
-                  </li>
-                  <li><strong>ACTION ITEMS</strong><br>
-                      <p style="line-height: 40px">
-                      1.	The Chair, Prof. Dr. Min Chen, presented the background of establishing YGWG, as well as the purpose and aim of promoting YGWG activities.<br>
-                      2.	The secretary, Dr. Li He, presented the draft of YGWG’s constitution. Dr. Sengupta, Dr. Hoang, Dr. Chen and Dr. Wu made few great suggestions regarding including more Asian countries in YGWG, and detailing membership rules.<br>
-                      3.	The secretary, Dr. Li He, presented the draft of YGWG’s website design, and all attendees discussed website contents. For example, add links of other important conferences on the website, list papers from journals for which YGWG members serve as editorial members, add information of special issues/working paper/funding, language options of the website, organize best paper competition and distinguished scholar award.<br>
-                      4.	Attendees discussed future activity plan, such as creating group mail list, building website, organizing online lecture series, and offering internship opportunities to undergraduate and graduate students.
-                      <br><br>
-                      </p>
-                  </li>
-                  <li><strong>OTHER NOTES</strong><br>
-                      No other notes.
-                  </li>
-              </ul>
-          </div>
+                <div id="2020">
+                    <div id="June-First-online-meeting" class="cos-modal">
+                        <strong>First online meeting of Young Geographer Working Group (YGWG) of AGA</strong><br>
+                        <small class="home-date">JUNE 27, 2020<br></small>
+                        <hr>
+                        <br>
+                        <img style="max-width: 100%;" src="img/Events/first online meeting.png">
+                        <br><br>
+                        <ul>
+                            <li>
+                                Location:Zoom meeting<br>
+                                Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 27, 2020<br>
+                                Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14:00 Beijing Time<br><br>
+                            </li>
+                            <li><strong>ATTENDANCE</strong><br>
+                                <p>
+                                    Min Chen, Xuanzi Zhang, Dhritiraj Sengupta, Debajit Datta, Gulomjon Umirzakov, Nguyen Van
+                                    Hoang,<br>
+                                    Suh-hee Choi, Xing Huang, Zhuo Wu, Li He, Xiaoyu He<br><br>
+                                </p>
+                            </li>
+                            <li><strong>AGENDA ITEMS</strong><br>
+                                <p>
+                                    1. Learn the background of establishing YGWG<br>
+                                    2. Discuss the draft of YGWG (AGA) constitution<br>
+                                    3. Discuss website content of YGWG<br>
+                                    4. Plan future activities<br><br>
+                                </p>
+                            </li>
+                            <li><strong>ACTION ITEMS</strong><br>
+                                <p style="line-height: 40px">
+                                    1.	The Chair, Prof. Dr. Min Chen, presented the background of establishing YGWG, as well as the purpose and aim of promoting YGWG activities.<br>
+                                    2.	The secretary, Dr. Li He, presented the draft of YGWG’s constitution. Dr. Sengupta, Dr. Hoang, Dr. Chen and Dr. Wu made few great suggestions regarding including more Asian countries in YGWG, and detailing membership rules.<br>
+                                    3.	The secretary, Dr. Li He, presented the draft of YGWG’s website design, and all attendees discussed website contents. For example, add links of other important conferences on the website, list papers from journals for which YGWG members serve as editorial members, add information of special issues/working paper/funding, language options of the website, organize best paper competition and distinguished scholar award.<br>
+                                    4.	Attendees discussed future activity plan, such as creating group mail list, building website, organizing online lecture series, and offering internship opportunities to undergraduate and graduate students.
+                                    <br><br>
+                                </p>
+                            </li>
+                            <li><strong>OTHER NOTES</strong><br>
+                                No other notes.
+                            </li>
+                        </ul>
+                    </div>
 
-          <br><hr style="border-bottom:3px double grey;"><br>
+                    <br><hr style="border-bottom:3px double grey;"><br>
 
-          <div id="June-A-Position-Paper" class="cos-modal">
-            <strong class="home-h">A Position Paper on Open Web-Distributed Integrated Geographic Modelling and Simulation to Enable Broader Participation and Applications</strong><br>
-            <small class="home-date">JUNE 24, 2020<br></small>
-            <hr>
-            <p>Chair of YGWG of AGA joined forces to write a position paper on Open Web-Distributed Integrated Geographic Modelling and Simulation to Enable Broader Participation and Applications.<br><br></p>
-            <p>The <a href="https://www.sciencedirect.com/science/article/pii/S0012825220302695" target="_blank" >paper</a> has appeared on the Elsevier journal Earth-Science Reviews and it is open access.<br><br></p>
-            <p  style="line-height: 40px;">The abstract follows:<br>
-              Integrated geographic modelling and simulation is a computational means to improve understanding of the environment. With the development of Service Oriented Architecture (SOA) and web technologies, it is possible to conduct open, extensible integrated geographic modelling across a network in which resources can be accessed and integrated, and further distributed geographic simulations can be performed. This open web-distributed modelling and simulation approach is likely to enhance the use of existing resources and can attract diverse participants. With this approach, participants from different physical locations or domains of expertise can perform comprehensive modelling and simulation tasks collaboratively. This paper reviews past integrated modelling and simulation systems, highlighting the associated development challenges when moving to an open web-distributed system. A conceptual framework is proposed to introduce a roadmap from a system design perspective, with potential use cases provided. The four components of this conceptual framework – a set of standards, a resource sharing environment, a collaborative integrated modelling environment, and a distributed simulation environment – are also discussed in detail with the goal of advancing this emerging field.</p>
+                    <div id="June-A-Position-Paper" class="cos-modal">
+                        <strong class="home-h">A Position Paper on Open Web-Distributed Integrated Geographic Modelling and Simulation to Enable Broader Participation and Applications</strong><br>
+                        <small class="home-date">JUNE 24, 2020<br></small>
+                        <hr>
+                        <p>Chair of YGWG of AGA joined forces to write a position paper on Open Web-Distributed Integrated Geographic Modelling and Simulation to Enable Broader Participation and Applications.<br><br></p>
+                        <p>The <a href="https://www.sciencedirect.com/science/article/pii/S0012825220302695" target="_blank" >paper</a> has appeared on the Elsevier journal Earth-Science Reviews and it is open access.<br><br></p>
+                        <p  style="line-height: 40px;">The abstract follows:<br>
+                            Integrated geographic modelling and simulation is a computational means to improve understanding of the environment. With the development of Service Oriented Architecture (SOA) and web technologies, it is possible to conduct open, extensible integrated geographic modelling across a network in which resources can be accessed and integrated, and further distributed geographic simulations can be performed. This open web-distributed modelling and simulation approach is likely to enhance the use of existing resources and can attract diverse participants. With this approach, participants from different physical locations or domains of expertise can perform comprehensive modelling and simulation tasks collaboratively. This paper reviews past integrated modelling and simulation systems, highlighting the associated development challenges when moving to an open web-distributed system. A conceptual framework is proposed to introduce a roadmap from a system design perspective, with potential use cases provided. The four components of this conceptual framework – a set of standards, a resource sharing environment, a collaborative integrated modelling environment, and a distributed simulation environment – are also discussed in detail with the goal of advancing this emerging field.</p>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+
         </div>
     </div>
-        <br><br>
+
+
+    <!--Events-other-->
+    <div class="row" id="otherinformation">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">YGWG Annual Meeting</h4>
+            <hr>
+            <div class="cos-modal">
+                <ul>
+                    <li>Date to be determined, The 1st Annual Meeting of YGWG.</li>
+                    <li>June 27, 2020, The 1st virtual meeting of YGWG.</li>
+                </ul>
+            </div>
+            <br><br>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">YGWG Regional Meeting</h4>
+            <hr>
+            <div class="cos-modal">
+                <ul>
+                    <li>Date to be determined, The 1st Annual Meeting of Region 1.</li>
+                    <li>Date to be determined, The 1st Annual Meeting of Region 2.</li>
+                    <li>Date to be determined, The 1st Annual Meeting of Region 3.</li>
+                </ul>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="row" id="specialissue" >
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h3 class="cos-strong">Special Issue</h3>
+            <hr>
+            <div class="col-xs-12 col-md-12">
+                <strong style="font-size: 1.2rem;color: #117450"><a  style="color: #117450"  target="_blank" href="https://onlinelibrary.wiley.com/page/journal/14679671/homepage/featured-collections#3">Open Calls for Papers </a></strong><br>
+                <br>
+                <p>
+                    The geographic environment is a huge and complex system,
+                    in which existing various natural processes, human activities,
+                    and information interactions. Researchers have made and are continually
+                    making efforts in understanding this complicated environment. In addition to
+                    in-depth exploration in a single discipline, study that integrating knowledge
+                    from multiple fields is getting more and more attention. Following such a trend,
+                    Virtual Geographic Environment (VGE) was proposed as a new generation of geographic analysis
+                    tool. The construction of a VGE brings Geographic Information Science (GIS) together with natural
+                    geography and human geography, and it mainly aims to form a digital twin of the real world.
+                    In a VGE, different experiments can be conducted and potential solutions for the real world
+                    can be explored based on geographic rules. In this context, we propose a Special Issue that
+                    targets on constructing VGE based on ubiquitous geographic information, which
+                    can support better modeling and simulation of the real world.
+                </p>
+                <br>
+
+                <p>Full details of the call are available <a target="_blank" href="https://onlinelibrary.wiley.com/pb-assets/14679671/TGIS%20SI%20Virt%20Geo%20Enviro%20Construction-1611337805923.pdf">here. </a></p>
+                <br>
+
+            </div>
+            <hr style="border-bottom:3px double grey;">
+            <div class="col-xs-12 col-md-12">
+                <strong style="font-size: 1.2rem;color: #117450"><a style="color: #117450" target="_blank" href="https://www.journals.elsevier.com/applied-energy/call-for-papers/special-issue-on-energy-digitization-with-spatial-intelligen">Energy digitization with spatial intelligence </a></strong><br>
+                <br>
+                <p>
+                    The digitization of energy systems provides potential growth
+                    in energy efficiency by integrating and analyzing data for
+                    environmental management. Three emerging trends in using digital
+                    technology, active energy management systems (EMSs), data-driven
+                    consumer engagement platforms, and new performance-based revenue
+                    models, support the significant improvement of energy efficiency.
+                    Specifically, data detection technologies (e.g., sensors and smart meters)
+                    are used not only to collect data on the production process but also to determine energy consumption factors.
+                </p>
+                <br>
+
+                <p>Full details of the call are available <a target="_blank" href="https://www.journals.elsevier.com/applied-energy/call-for-papers/special-issue-on-energy-digitization-with-spatial-intelligen">here. </a></p>
+                <br>
+
+            </div>
+        </div>
+    </div>
+    <!--Publications-memberspapers-->
+    <div class="row" id="memberspaper">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">Members' Papers</h4>
+            <hr>
+            <div class="cos-modal">
+                <ul>
+                    <li><strong><a href="https://doi.org/10.1016/j.earscirev.2020.103223" target="_blank">Position paper: Open web-distributed integrated geographic modelling and simulation to enable broader participation and applications.</a></strong></li>
+                    <i class="fa fa-paperclip"><a href="doc/Open Web-Distributed Integrated Geographic Modelling to Enable Wider Participation and Model Application_cm.pdf"
+                                                  target="_blank"> Download </a></i>
+                    <br><br>
+
+                    <li><strong><a href="https://doi.org/10.1016/j.jenvman.2012.04.013" target="_blank">Community based mangrove management: A review on status and sustainability.</a></strong></li>
+                    <i class="fa fa-paperclip"><a href="doc/Community based mangrove management, A review on status and sustainability_Debajit Datta.pdf"
+                                                  target="_blank"> Download </a></i>
+                    <br><br>
+
+                    <li><strong><a href="https://doi.org/10.1016/j.apgeog.2017.12.015" target="_blank">Building beyond land: An overview of coastal land reclamation in 16 global megacities.</a></strong></li>
+                    <i class="fa fa-paperclip"><a href="doc/Building beyond land, An overview of coastal land reclamation in 16 global megacities_Dhritiraj Sengupta.pdf"
+                                                  target="_blank"> Download </a></i>
+                    <br><br>
+
+                    <li><strong><a href="https://ageconsearch.umn.edu/record/302165" target="_blank">ESTIMATION OF PHREATIC EVAPORATION IN IRRIGATION AGRICULTURE USING STABLE ISOTOPES.</a></strong></li>
+                    <i class="fa fa-paperclip"><a href="doc/ESTIMATION OF PHREATIC EVAPORATION IN IRRIGATION AGRICULTURE USING STABLE ISOTOPES_Gulomjon Umirzakov.pdf"
+                                                  target="_blank"> Download </a></i>
+                    <br><br>
+
+                    <li><strong><a href="https://doi.org/10.1007/s10980-019-00809-8" target="_blank">Future forest dynamics under climate change, land use change, and harvest in subtropical forests in Southern China.</a></strong></li>
+                    <i class="fa fa-paperclip"><a href="doc/Future forest dynamics under climate change, land use change,and harvest in subtropical forests in Southern China_wuzhuo.pdf"
+                                                  target="_blank"> Download </a></i>
+                    <br><br>
+
+                    <li><strong><a href="https://doi.org/10.1080/16078055.2016.1216886" target="_blank">Leisure attitude and satisfaction with leisure and life.proposing leisure prioritization and justification.</a></strong></li>
+                    <i class="fa fa-paperclip"><a href="doc/Leisure attitude and satisfaction with leisure and life.proposing leisure prioritization and justification_suh-hee Choi.pdf"
+                                                  target="_blank"> Download </a></i>
+                    <br><br>
+
+                    <li><strong><a href="https://doi.org/10.1016/j.future.2020.05.044" target="_blank">Participatory intercomparison strategy for terrestrial carbon cycle models based on a service-oriented architecture. Future Generation Computer Systems.</a></strong></li>
+                    <i class="fa fa-paperclip"><a href="doc/Participatory intercomparison strategy for terrestrial carbon cycle models based on a service-oriented architecture. Future Generation Computer Systems_cm.pdf"
+                                                  target="_blank"> Download </a></i>
+                    <br><br>
+
+                    <li><strong><a href="https://doi.org/10.1016/j.apgeog.2015.02.002" target="_blank">Temporal stability of model parameters in crime rate analysis, An empirical examination.</a></strong></li>
+                    <i class="fa fa-paperclip"><a href="doc/Temporal stability of model parameters in crime rate analysis, An empirical examination_HeLi.pdf"
+                                                  target="_blank"> Download </a></i>
+                    <br><br>
+
+                    <li><strong><a href="https://doi.org/10.1016/j.jdmm.2018.02.005" target="_blank">Tourism communicative actions of sojourners and information recipients.</a></strong></li>
+                    <i class="fa fa-paperclip"><a href="doc/Tourism communicative actions of sojourners and information recipients_Suh hee Choi.pdf"
+                                                  target="_blank"> Download </a></i>
+                    <br><br>
+                </ul>
             </div>
 
         </div>
-        </div>
+    </div>
 
+    <!--Publications-Journals-->
+    <!--        <div class="row cos-modal2" id="Journals">-->
+    <!--            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">-->
+    <!--                <h4 class="cos-strong">Journals</h4>-->
+    <!--                <hr>-->
+    <!--                <div class="col-12">-->
+    <!--                    <div class="col-md-3 col-xs-12" >-->
+    <!--                      <br>-->
+    <!--                    <a href="http://www.sciencedirect.com/science/journal/01436228"><img class="img-responsive" th:src="@{/img/Journals/Applied Geography.jpg}" ></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="m-fsz col-md-9 col-xs-12 m-center">-->
 
-        <!--Events-other-->
-        <div class="row" id="otherinformation">
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-              <h4 class="cos-strong">YGWG Annual Meeting</h4>
-              <hr>
-              <div class="cos-modal">
-                  <ul>
-                      <li>Date to be determined, The 1st Annual Meeting of YGWG.</li>
-                      <li>June 27, 2020, The 1st virtual meeting of YGWG.</li>
-                  </ul>
-              </div>
-              <br><br>
-          </div>
+    <!--                      <strong><a href="http://www.sciencedirect.com/science/journal/01436228">Applied Geography</a></strong><br>-->
+    <!--                      <p><strong>Editor-in-Chief</strong>:N. Hoalst-Pullen <br>-->
+    <!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:0143-6228<br>-->
+    <!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:3.508<br>-->
+    <!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Applied Geography is a journal devoted to the publication of research which uses geographical theory and methodology to resolve those human problems that have a geographical dimension. These problems may be related to the assessment, management and allocation of the world's physical and/or human resources.<br>-->
+    <!--                      </p>-->
+    <!--                    </div>-->
+    <!--                </div>-->
 
-          <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-              <h4 class="cos-strong">YGWG Regional Meeting</h4>
-              <hr>
-              <div class="cos-modal">
-                  <ul>
-                      <li>Date to be determined, The 1st Annual Meeting of Region 1.</li>
-                      <li>Date to be determined, The 1st Annual Meeting of Region 2.</li>
-                      <li>Date to be determined, The 1st Annual Meeting of Region 3.</li>
-                  </ul>
-              </div>
-              <br>
-          </div>
-        </div>
-        <div class="row" id="specialissue" >
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h3 class="cos-strong">Special Issue</h3>
-                <hr>
-                <div class="col-xs-12 col-md-12">
-                    <strong style="font-size: 1.2rem;color: #117450"><a  style="color: #117450"  target="_blank" href="https://onlinelibrary.wiley.com/page/journal/14679671/homepage/featured-collections#3">Open Calls for Papers </a></strong><br>
+    <!--                <div class="col-12">-->
+    <!--                    <hr>-->
+    <!--                    <div class="col-md-3 col-xs-12" >-->
+    <!--                      <br>-->
+    <!--                    <a href="https://www.sciencedirect.com/journal/earth-science-reviews"><img class="img-responsive" src="img/Journals/Earth-Science Reviews.jpg" ></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="m-fsz col-md-9 col-xs-12 m-center">-->
+    <!--                      <br>-->
+    <!--                      <strong><a href="https://www.sciencedirect.com/journal/earth-science-reviews">Earth-Science Reviews </a></strong><br>-->
+    <!--                      <p><strong>Editor-in-Chief</strong>: <br>-->
+    <!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:0012-8252<br>-->
+    <!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:9.724<br>-->
+    <!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Covering a much wider field than the usual specialist journals, Earth Science Reviews publishes review articles dealing with all aspects of Earth Sciences, and is an important vehicle for allowing readers to see their particular interest related to the Earth Sciences as a whole.<br>-->
+    <!--                      </p>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+
+    <!--                <div class="col-12">-->
+    <!--                    <hr>-->
+    <!--                    <div class="col-md-3" >-->
+    <!--                      <br>-->
+    <!--                    <a href="https://www.sciencedirect.com/journal/future-generation-computer-systems"><img class="img-responsive" src="img/Journals/Future Generation Computer Systems.jpg" ></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="m-fsz col-md-9 m-center">-->
+    <!--                      <br>-->
+    <!--                      <strong><a href="https://www.sciencedirect.com/journal/future-generation-computer-systems">Future Generation Computer Systems</a></strong><br>-->
+    <!--                      <p><strong>Editor-in-Chief</strong>:Peter Sloot, Micheal Taufer <br>-->
+    <!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:0167-739X<br>-->
+    <!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:6.125<br>-->
+    <!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Computing infrastructures and systems are rapidly developing and so are novel ways to map, control and execute scientific applications which become more and more complex and collaborative.<br>-->
+    <!--                      </p>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+
+    <!--                <div class="col-xs-12">-->
+    <!--                    <hr>-->
+    <!--                    <div class="col-md-3" >-->
+    <!--                      <br>-->
+    <!--                    <a href="https://www.sciencedirect.com/journal/journal-of-destination-marketing-and-management"><img class="img-responsive" src="img/Journals/Journal of Destination Marketing Management.jpg" ></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="m-fsz col-md-9 m-center">-->
+    <!--                      <br>-->
+    <!--                      <strong><a href="https://www.sciencedirect.com/journal/journal-of-destination-marketing-and-management">Journal of Destination Marketing & Management</a></strong><br>-->
+    <!--                      <p><strong>Editor-in-Chief</strong>:Peter Sloot, Micheal Taufer <br>-->
+    <!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:2212-571X<br>-->
+    <!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:4.279<br>-->
+    <!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:JDMM seeks to develop a robust theoretical understanding of destination marketing and management by harnessing knowledge drawn from the full breadth of disciplinary approaches to the study of destinations. It seeks to foster a critical development of the domain, expand the frontiers of knowledge in the field and provide an international forum for the exchange of ideas.<br>-->
+    <!--                      </p>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+
+    <!--                <div class="col-12">-->
+    <!--                    <hr>-->
+    <!--                    <div class="col-md-3" >-->
+    <!--                      <br>-->
+    <!--                    <a href="https://www.sciencedirect.com/journal/journal-of-environmental-management"><img class="img-responsive" src="img/Journals/Journal of Environmental Management.jpg" ></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="m-fsz col-md-9 m-center">-->
+    <!--                      <br>-->
+    <!--                      <strong><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management">Journal of Environmental Management</a></strong><br>-->
+    <!--                      <p><strong>Editor-in-Chief</strong>:Peter Sloot, Micheal Taufer <br>-->
+    <!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:0301-4797<br>-->
+    <!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:5.647<br>-->
+    <!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:The Journal of Environmental Management is a peer reviewed journal for the publication of original research related to managing environmental systems and improving environmental quality. All papers submitted to the journal must show a distinctive link with environmental management applications.<br>-->
+    <!--                      </p>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+
+    <!--                <div class="col-12">-->
+    <!--                    <hr>-->
+    <!--                    <div class="col-md-3" >-->
+    <!--                      <br>-->
+    <!--                    <a href="https://www.sciencedirect.com/journal/journal-of-environmental-management"><img class="img-responsive" src="img/Journals/Journal of Landscape Ecology.png" ></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="m-fsz col-md-9 m-center">-->
+    <!--                      <br>-->
+    <!--                      <strong><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management">Landscape Ecology</a></strong><br>-->
+    <!--                      <p><strong>Editor-in-Chief</strong>:Jianguo Wu <br>-->
+    <!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 0921-2973<br>-->
+    <!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:3.385<br>-->
+    <!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Landscape Ecology is the flagship journal of a well-established and rapidly developing interdisciplinary science that focuses explicitly on the ecological understanding of spatial heterogeneity. Landscape Ecology draws together expertise from both biophysical and socioeconomic sciences to explore basic and applied research questions concerning the ecology, conservation, management, design/planning, and sustainability of landscapes as coupled human-environment systems. <br>-->
+    <!--                      </p>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+
+    <!--            </div>-->
+
+    <!--            &lt;!&ndash; <div class="col-xs-7 col-xs-offset-2 ">-->
+    <!--              <h4 class="cos-strong">Publications</h4>-->
+    <!--              <hr>-->
+    <!--                <div class="cos-modal">-->
+    <!--                    Annals of GIS is an international peer-reviewed journal that encourages the interdisciplinary-->
+    <!--                    exchange of original ideas on theory, methods, development and applications in the fields of-->
+    <!--                    geo-information science.<br><br>-->
+    <!--                    Research papers are invited to cover the latest development in the following areas:-->
+    <!--                    <ul>-->
+    <!--                        <li>remote sensing and data acquisition</li>-->
+    <!--                        <li>geographic information systems</li>-->
+    <!--                        <li>geo-visualization and virtual geographic environments (VGE)</li>-->
+    <!--                        <li>spatial analysis and modeling</li>-->
+    <!--                        <li>uncertainty modeling</li>-->
+    <!--                        <li>and their applications in natural resource, ecosystem, urban management, and other-->
+    <!--                            humanities and social science areas.</li>-->
+    <!--                    </ul>-->
+    <!--                    For this week's reading, we recommend a paper published in Annals of GIS by Mashhoodi et al (2019)-->
+    <!--                    on Spatial analysis. The reference to this article is: MASHHOODI, B., STEAD, D. & VAN TIMMEREN, A.-->
+    <!--                    2019. Spatial homogeneity and heterogeneity of energy poverty: a neglected dimension. Annals of-->
+    <!--                    GIS, 25, 19-31.<a-->
+    <!--                        href="https://doi.org/10.1080/19475683.2018.1557253.">https://doi.org/10.1080/19475683.2018.1557253.</a> <br><br>-->
+    <!--                    In addition, we also recommend a newly published paper by Persad (2020) in Annals of GIS special-->
+    <!--                    issue: Advances in Geospatial Analysis for Health Research. The reference to this article-->
+    <!--                    is: PERSAD, R. A. 2020. Spatio-temporal analysis of mental illness and the impact of-->
+    <!--                    marginalization-based factors: a case study of Ontario, Canada. Annals of GIS, 26, 237-250. <a-->
+    <!--                        href="https://doi.org/10.1080/19475683.2020.1791251.">https://doi.org/10.1080/19475683.2020.1791251.</a><br><br>-->
+    <!--                    Below we provided a categorized list of papers recently published in our journal for your further-->
+    <!--                    reading and referencing.<br><br>-->
+    <!--                    <i class="fa fa-paperclip"><a href="doc/PaperList_Volume 24-26（2018-2020）-2020-09-06.docx"-->
+    <!--                            target="_blank"> PaperList_Volume 24-26（2018-2020）-2020-09-06</a></i><br><br>-->
+    <!--                </div>-->
+    <!--            </div> &ndash;&gt;-->
+    <!--            &lt;!&ndash;-->
+    <!--    <div class="col-xs-7 col-xs-offset-2 ">-->
+    <!--      <h4 class="cos-strong">YGWG Newsletters</h4>-->
+    <!--      <hr>-->
+    <!--      <div class="cos-modal">-->
+    <!--        <p>The YGWG keeps in touch with members through the Newsletter. It is an invaluable source of information about the discipline and the activities of the Association.<br>-->
+    <!--           Each issue features a short article by the current YGWG Chair, which may be reflective, informative or even a call to action. <br>-->
+    <!--           There are announcements and updates about the next Annual Meeting, as well as articles about the geography of the host city.<br>-->
+    <!--           The Newsletter also contains announcements of upcoming events and funding opportunities, policy updates, member notices including department news and obituaries, and information about the latest geography publications.<br>-->
+    <!--        </p>-->
+    <!--        <br/>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="col-xs-7 col-xs-offset-2 ">-->
+    <!--      <h4 class="cos-strong">Publications by Members</h4>-->
+    <!--      <hr>-->
+    <!--      <div class="cos-modal">-->
+    <!--        <p>Publications by YGWG members will be updated from time to time.<br>-->
+    <!--          <strong>July 2020</strong><br>-->
+    <!--          <ul>-->
+    <!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
+    <!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
+    <!--          </ul>-->
+    <!--          <strong>June 2020</strong><br>-->
+    <!--          <ul>-->
+    <!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
+    <!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
+    <!--          </ul>-->
+    <!--          <strong>May 2020</strong><br>-->
+    <!--          <ul>-->
+    <!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
+    <!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
+    <!--          </ul>-->
+    <!--        </p>-->
+    <!--        <br/>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <!--    <div class="col-xs-7 col-xs-offset-2 ">-->
+    <!--      <h4 class="cos-strong">New Geography Books</h4>-->
+    <!--      <hr>-->
+    <!--      <div class="cos-modal">-->
+    <!--        <p>Every season the YGWG compiles a list of newly published books in geography and related areas.<br><br>-->
+    <!--          <strong>1<sup>st</sup> Season 2020</strong>-->
+    <!--          <ul>-->
+    <!--            <li>The Saguaro Cactus : A Natural History by David Yetman, Alberto Burquez, Kevin Hultine, and Michael Sanderson (University of Arizona Press 2020)</li>-->
+    <!--            <li>Wild Blue Media: Thinking through Seawater by Melody Jue (Duke University Press 2020)</li>-->
+    <!--            <li>Intimate Geopolitics: Love, Territory, and the Future on India’s Northern Threshold by Sara Smith (Rutgers University Press 2020)</li>-->
+    <!--            <li>Panic City: Crime and the Fear Industries in Johannesburg by Martin J. Murray (Stanford University Press 2020)</li>-->
+    <!--            <li>Assembling Moral Mobilities : Cycling, Cities and the Common Good by Nicholas A Scott (University of Nebraska Press 2020)</li>-->
+    <!--          </ul>-->
+    <!--        </p>-->
+    <!--        <br/>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--    &ndash;&gt;-->
+    <!--        </div>-->
+    <div class="row cos-modal2" id="Journals">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">Journals</h4>
+            <hr>
+            <div class="col-xs-12 col-md-12" >
+                <div class="col-md-3 col-xs-12" >
                     <br>
+                    <a href="https://www.journals.elsevier.com/global-environmental-change"><img class="img-responsive" th:src="@{/img/Journals/globalEnvironmentalChange.jpg}" ></a>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+                    <br>
+                    <strong><a href="https://www.journals.elsevier.com/global-environmental-change">Global Environmental Change</a></strong><br>
                     <p>
-                        The geographic environment is a huge and complex system,
-                        in which existing various natural processes, human activities,
-                        and information interactions. Researchers have made and are continually
-                        making efforts in understanding this complicated environment. In addition to
-                        in-depth exploration in a single discipline, study that integrating knowledge
-                        from multiple fields is getting more and more attention. Following such a trend,
-                        Virtual Geographic Environment (VGE) was proposed as a new generation of geographic analysis
-                        tool. The construction of a VGE brings Geographic Information Science (GIS) together with natural
-                        geography and human geography, and it mainly aims to form a digital twin of the real world.
-                        In a VGE, different experiments can be conducted and potential solutions for the real world
-                        can be explored based on geographic rules. In this context, we propose a Special Issue that
-                        targets on constructing VGE based on ubiquitous geographic information, which
-                        can support better modeling and simulation of the real world.
+                        <label class="stronglabel">ISSN</label>:0959-3780<br>
+                        <label class="stronglabel">Impact Factor</label>: 10.466(2019)<br>
+                        <label class="stronglabel">Description</label>: Global Environmental Change is a peer-reviewed international journal publishing high
+                        quality, theoretically and empirically rigorous articles, which advance knowledge about the human and policy dimensions of
+                        global environmental change. The journal interprets global environmental change to mean the outcome of processes that are manifest
+                        in localities, but with consequences at multiple spatial, temporal and socio-political scales. The journal is interested in articles which
+                        have a significant social science component. <br>
                     </p>
-                    <br>
-
-                    <p>Full details of the call are available <a target="_blank" href="https://onlinelibrary.wiley.com/pb-assets/14679671/TGIS%20SI%20Virt%20Geo%20Enviro%20Construction-1611337805923.pdf">here. </a></p>
-                    <br>
-
                 </div>
-                <hr style="border-bottom:3px double grey;">
-                <div class="col-xs-12 col-md-12">
-                    <strong style="font-size: 1.2rem;color: #117450"><a style="color: #117450" target="_blank" href="https://www.journals.elsevier.com/applied-energy/call-for-papers/special-issue-on-energy-digitization-with-spatial-intelligen">Energy digitization with spatial intelligence </a></strong><br>
-                    <br>
+            </div>
+
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12" >
+                    <a href="https://journals.sagepub.com/home/dhg"><img class="img-responsive" th:src="@{/img/Journals/DialoguesinHumanGeography.png}" ></a>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+
+                    <strong><a href="https://journals.sagepub.com/home/dhg">Dialogues in Human Geography</a></strong><br>
                     <p>
-                        The digitization of energy systems provides potential growth
-                        in energy efficiency by integrating and analyzing data for
-                        environmental management. Three emerging trends in using digital
-                        technology, active energy management systems (EMSs), data-driven
-                        consumer engagement platforms, and new performance-based revenue
-                        models, support the significant improvement of energy efficiency.
-                        Specifically, data detection technologies (e.g., sensors and smart meters)
-                        are used not only to collect data on the production process but also to determine energy consumption factors.
+                        <label class="stronglabel">ISSN</label>: 2043-8206<br>
+                        <label class="stronglabel">Impact Factor</label>: 10.231(2019)<br>
+                        <label class="stronglabel">Description</label>: The primary aim of Dialogues in Human Geography
+                        is to stimulate open and critical debate on the philosophical, methodological and pedagogic
+                        foundations of geographic thought and praxis. It publishes articles, with responses, which seek
+                        to critique present thinking and praxis and set the agenda for future avenues of geographic thought,
+                        empirical research and pedagogy. Dialogues is theoretical in orientation, forward looking, and seeks to
+                        publish original and innovative work that pushes the boundaries of geographical theory,
+                        praxis and pedagogy through a unique (in Geography) and innovative format of open peer commentary.<br>
                     </p>
-                    <br>
-
-                    <p>Full details of the call are available <a target="_blank" href="https://www.journals.elsevier.com/applied-energy/call-for-papers/special-issue-on-energy-digitization-with-spatial-intelligen">here. </a></p>
-                    <br>
-
                 </div>
             </div>
-        </div>
-        <!--Publications-memberspapers-->
-        <div class="row" id="memberspaper">
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">Members' Papers</h4>
+
+
+            <div class="col-xs-12 col-md-12">
                 <hr>
-                <div class="cos-modal">
-                    <ul>
-                        <li><strong><a href="https://doi.org/10.1016/j.earscirev.2020.103223" target="_blank">Position paper: Open web-distributed integrated geographic modelling and simulation to enable broader participation and applications.</a></strong></li>
-                        <i class="fa fa-paperclip"><a href="doc/Open Web-Distributed Integrated Geographic Modelling to Enable Wider Participation and Model Application_cm.pdf"
-                            target="_blank"> Download </a></i>
-                        <br><br>
-
-                        <li><strong><a href="https://doi.org/10.1016/j.jenvman.2012.04.013" target="_blank">Community based mangrove management: A review on status and sustainability.</a></strong></li>
-                        <i class="fa fa-paperclip"><a href="doc/Community based mangrove management, A review on status and sustainability_Debajit Datta.pdf"
-                            target="_blank"> Download </a></i>
-                        <br><br>
-
-                        <li><strong><a href="https://doi.org/10.1016/j.apgeog.2017.12.015" target="_blank">Building beyond land: An overview of coastal land reclamation in 16 global megacities.</a></strong></li>
-                        <i class="fa fa-paperclip"><a href="doc/Building beyond land, An overview of coastal land reclamation in 16 global megacities_Dhritiraj Sengupta.pdf"
-                            target="_blank"> Download </a></i>
-                        <br><br>
-
-                        <li><strong><a href="https://ageconsearch.umn.edu/record/302165" target="_blank">ESTIMATION OF PHREATIC EVAPORATION IN IRRIGATION AGRICULTURE USING STABLE ISOTOPES.</a></strong></li>
-                        <i class="fa fa-paperclip"><a href="doc/ESTIMATION OF PHREATIC EVAPORATION IN IRRIGATION AGRICULTURE USING STABLE ISOTOPES_Gulomjon Umirzakov.pdf"
-                            target="_blank"> Download </a></i>
-                        <br><br>
-
-                        <li><strong><a href="https://doi.org/10.1007/s10980-019-00809-8" target="_blank">Future forest dynamics under climate change, land use change, and harvest in subtropical forests in Southern China.</a></strong></li>
-                        <i class="fa fa-paperclip"><a href="doc/Future forest dynamics under climate change, land use change,and harvest in subtropical forests in Southern China_wuzhuo.pdf"
-                            target="_blank"> Download </a></i>
-                        <br><br>
-
-                        <li><strong><a href="https://doi.org/10.1080/16078055.2016.1216886" target="_blank">Leisure attitude and satisfaction with leisure and life.proposing leisure prioritization and justification.</a></strong></li>
-                        <i class="fa fa-paperclip"><a href="doc/Leisure attitude and satisfaction with leisure and life.proposing leisure prioritization and justification_suh-hee Choi.pdf"
-                            target="_blank"> Download </a></i>
-                        <br><br>
-
-                        <li><strong><a href="https://doi.org/10.1016/j.future.2020.05.044" target="_blank">Participatory intercomparison strategy for terrestrial carbon cycle models based on a service-oriented architecture. Future Generation Computer Systems.</a></strong></li>
-                        <i class="fa fa-paperclip"><a href="doc/Participatory intercomparison strategy for terrestrial carbon cycle models based on a service-oriented architecture. Future Generation Computer Systems_cm.pdf"
-                            target="_blank"> Download </a></i>
-                        <br><br>
-
-                        <li><strong><a href="https://doi.org/10.1016/j.apgeog.2015.02.002" target="_blank">Temporal stability of model parameters in crime rate analysis, An empirical examination.</a></strong></li>
-                        <i class="fa fa-paperclip"><a href="doc/Temporal stability of model parameters in crime rate analysis, An empirical examination_HeLi.pdf"
-                            target="_blank"> Download </a></i>
-                        <br><br>
-
-                        <li><strong><a href="https://doi.org/10.1016/j.jdmm.2018.02.005" target="_blank">Tourism communicative actions of sojourners and information recipients.</a></strong></li>
-                        <i class="fa fa-paperclip"><a href="doc/Tourism communicative actions of sojourners and information recipients_Suh hee Choi.pdf"
-                            target="_blank"> Download </a></i>
-                        <br><br>
-                    </ul>
+                <div class="col-md-3 col-xs-12" >
+                    <a href="https://www.sciencedirect.com/journal/earth-science-reviews"><img class="img-responsive" th:src="@{/img/Journals/Earth-Science Reviews.jpg}" ></a>
                 </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
 
+                    <strong><a href="https://www.sciencedirect.com/journal/earth-science-reviews">Earth-Science Reviews </a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 0012-8252<br>
+                        <label class="stronglabel">Impact Factor</label>: 9.724<br>
+                        <label class="stronglabel">Description</label>: Covering a much wider field than the usual specialist journals, Earth Science Reviews publishes review articles dealing with all aspects of Earth Sciences, and is an important vehicle for allowing readers to see their particular interest related to the Earth Sciences as a whole.<br>
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <!--Publications-Journals-->
-<!--        <div class="row cos-modal2" id="Journals">-->
-<!--            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">-->
-<!--                <h4 class="cos-strong">Journals</h4>-->
-<!--                <hr>-->
-<!--                <div class="col-12">-->
-<!--                    <div class="col-md-3 col-xs-12" >-->
-<!--                      <br>-->
-<!--                    <a href="http://www.sciencedirect.com/science/journal/01436228"><img class="img-responsive" th:src="@{/img/Journals/Applied Geography.jpg}" ></a>-->
-<!--                    </div>-->
-<!--                    <div class="m-fsz col-md-9 col-xs-12 m-center">-->
-
-<!--                      <strong><a href="http://www.sciencedirect.com/science/journal/01436228">Applied Geography</a></strong><br>-->
-<!--                      <p><strong>Editor-in-Chief</strong>:N. Hoalst-Pullen <br>-->
-<!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:0143-6228<br>-->
-<!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:3.508<br>-->
-<!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Applied Geography is a journal devoted to the publication of research which uses geographical theory and methodology to resolve those human problems that have a geographical dimension. These problems may be related to the assessment, management and allocation of the world's physical and/or human resources.<br>-->
-<!--                      </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-12">-->
-<!--                    <hr>-->
-<!--                    <div class="col-md-3 col-xs-12" >-->
-<!--                      <br>-->
-<!--                    <a href="https://www.sciencedirect.com/journal/earth-science-reviews"><img class="img-responsive" src="img/Journals/Earth-Science Reviews.jpg" ></a>-->
-<!--                    </div>-->
-<!--                    <div class="m-fsz col-md-9 col-xs-12 m-center">-->
-<!--                      <br>-->
-<!--                      <strong><a href="https://www.sciencedirect.com/journal/earth-science-reviews">Earth-Science Reviews </a></strong><br>-->
-<!--                      <p><strong>Editor-in-Chief</strong>: <br>-->
-<!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:0012-8252<br>-->
-<!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:9.724<br>-->
-<!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Covering a much wider field than the usual specialist journals, Earth Science Reviews publishes review articles dealing with all aspects of Earth Sciences, and is an important vehicle for allowing readers to see their particular interest related to the Earth Sciences as a whole.<br>-->
-<!--                      </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-12">-->
-<!--                    <hr>-->
-<!--                    <div class="col-md-3" >-->
-<!--                      <br>-->
-<!--                    <a href="https://www.sciencedirect.com/journal/future-generation-computer-systems"><img class="img-responsive" src="img/Journals/Future Generation Computer Systems.jpg" ></a>-->
-<!--                    </div>-->
-<!--                    <div class="m-fsz col-md-9 m-center">-->
-<!--                      <br>-->
-<!--                      <strong><a href="https://www.sciencedirect.com/journal/future-generation-computer-systems">Future Generation Computer Systems</a></strong><br>-->
-<!--                      <p><strong>Editor-in-Chief</strong>:Peter Sloot, Micheal Taufer <br>-->
-<!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:0167-739X<br>-->
-<!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:6.125<br>-->
-<!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Computing infrastructures and systems are rapidly developing and so are novel ways to map, control and execute scientific applications which become more and more complex and collaborative.<br>-->
-<!--                      </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-xs-12">-->
-<!--                    <hr>-->
-<!--                    <div class="col-md-3" >-->
-<!--                      <br>-->
-<!--                    <a href="https://www.sciencedirect.com/journal/journal-of-destination-marketing-and-management"><img class="img-responsive" src="img/Journals/Journal of Destination Marketing Management.jpg" ></a>-->
-<!--                    </div>-->
-<!--                    <div class="m-fsz col-md-9 m-center">-->
-<!--                      <br>-->
-<!--                      <strong><a href="https://www.sciencedirect.com/journal/journal-of-destination-marketing-and-management">Journal of Destination Marketing & Management</a></strong><br>-->
-<!--                      <p><strong>Editor-in-Chief</strong>:Peter Sloot, Micheal Taufer <br>-->
-<!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:2212-571X<br>-->
-<!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:4.279<br>-->
-<!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:JDMM seeks to develop a robust theoretical understanding of destination marketing and management by harnessing knowledge drawn from the full breadth of disciplinary approaches to the study of destinations. It seeks to foster a critical development of the domain, expand the frontiers of knowledge in the field and provide an international forum for the exchange of ideas.<br>-->
-<!--                      </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-12">-->
-<!--                    <hr>-->
-<!--                    <div class="col-md-3" >-->
-<!--                      <br>-->
-<!--                    <a href="https://www.sciencedirect.com/journal/journal-of-environmental-management"><img class="img-responsive" src="img/Journals/Journal of Environmental Management.jpg" ></a>-->
-<!--                    </div>-->
-<!--                    <div class="m-fsz col-md-9 m-center">-->
-<!--                      <br>-->
-<!--                      <strong><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management">Journal of Environmental Management</a></strong><br>-->
-<!--                      <p><strong>Editor-in-Chief</strong>:Peter Sloot, Micheal Taufer <br>-->
-<!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:0301-4797<br>-->
-<!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:5.647<br>-->
-<!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:The Journal of Environmental Management is a peer reviewed journal for the publication of original research related to managing environmental systems and improving environmental quality. All papers submitted to the journal must show a distinctive link with environmental management applications.<br>-->
-<!--                      </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-12">-->
-<!--                    <hr>-->
-<!--                    <div class="col-md-3" >-->
-<!--                      <br>-->
-<!--                    <a href="https://www.sciencedirect.com/journal/journal-of-environmental-management"><img class="img-responsive" src="img/Journals/Journal of Landscape Ecology.png" ></a>-->
-<!--                    </div>-->
-<!--                    <div class="m-fsz col-md-9 m-center">-->
-<!--                      <br>-->
-<!--                      <strong><a href="https://www.sciencedirect.com/journal/journal-of-environmental-management">Landscape Ecology</a></strong><br>-->
-<!--                      <p><strong>Editor-in-Chief</strong>:Jianguo Wu <br>-->
-<!--                         <strong>ISSN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 0921-2973<br>-->
-<!--                         <strong>Impact Factor</strong>&nbsp;&nbsp;&nbsp;:3.385<br>-->
-<!--                         <strong>Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:Landscape Ecology is the flagship journal of a well-established and rapidly developing interdisciplinary science that focuses explicitly on the ecological understanding of spatial heterogeneity. Landscape Ecology draws together expertise from both biophysical and socioeconomic sciences to explore basic and applied research questions concerning the ecology, conservation, management, design/planning, and sustainability of landscapes as coupled human-environment systems. <br>-->
-<!--                      </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
-
-<!--            &lt;!&ndash; <div class="col-xs-7 col-xs-offset-2 ">-->
-<!--              <h4 class="cos-strong">Publications</h4>-->
-<!--              <hr>-->
-<!--                <div class="cos-modal">-->
-<!--                    Annals of GIS is an international peer-reviewed journal that encourages the interdisciplinary-->
-<!--                    exchange of original ideas on theory, methods, development and applications in the fields of-->
-<!--                    geo-information science.<br><br>-->
-<!--                    Research papers are invited to cover the latest development in the following areas:-->
-<!--                    <ul>-->
-<!--                        <li>remote sensing and data acquisition</li>-->
-<!--                        <li>geographic information systems</li>-->
-<!--                        <li>geo-visualization and virtual geographic environments (VGE)</li>-->
-<!--                        <li>spatial analysis and modeling</li>-->
-<!--                        <li>uncertainty modeling</li>-->
-<!--                        <li>and their applications in natural resource, ecosystem, urban management, and other-->
-<!--                            humanities and social science areas.</li>-->
-<!--                    </ul>-->
-<!--                    For this week's reading, we recommend a paper published in Annals of GIS by Mashhoodi et al (2019)-->
-<!--                    on Spatial analysis. The reference to this article is: MASHHOODI, B., STEAD, D. & VAN TIMMEREN, A.-->
-<!--                    2019. Spatial homogeneity and heterogeneity of energy poverty: a neglected dimension. Annals of-->
-<!--                    GIS, 25, 19-31.<a-->
-<!--                        href="https://doi.org/10.1080/19475683.2018.1557253.">https://doi.org/10.1080/19475683.2018.1557253.</a> <br><br>-->
-<!--                    In addition, we also recommend a newly published paper by Persad (2020) in Annals of GIS special-->
-<!--                    issue: Advances in Geospatial Analysis for Health Research. The reference to this article-->
-<!--                    is: PERSAD, R. A. 2020. Spatio-temporal analysis of mental illness and the impact of-->
-<!--                    marginalization-based factors: a case study of Ontario, Canada. Annals of GIS, 26, 237-250. <a-->
-<!--                        href="https://doi.org/10.1080/19475683.2020.1791251.">https://doi.org/10.1080/19475683.2020.1791251.</a><br><br>-->
-<!--                    Below we provided a categorized list of papers recently published in our journal for your further-->
-<!--                    reading and referencing.<br><br>-->
-<!--                    <i class="fa fa-paperclip"><a href="doc/PaperList_Volume 24-26（2018-2020）-2020-09-06.docx"-->
-<!--                            target="_blank"> PaperList_Volume 24-26（2018-2020）-2020-09-06</a></i><br><br>-->
-<!--                </div>-->
-<!--            </div> &ndash;&gt;-->
-<!--            &lt;!&ndash;-->
-<!--    <div class="col-xs-7 col-xs-offset-2 ">-->
-<!--      <h4 class="cos-strong">YGWG Newsletters</h4>-->
-<!--      <hr>-->
-<!--      <div class="cos-modal">-->
-<!--        <p>The YGWG keeps in touch with members through the Newsletter. It is an invaluable source of information about the discipline and the activities of the Association.<br>-->
-<!--           Each issue features a short article by the current YGWG Chair, which may be reflective, informative or even a call to action. <br>-->
-<!--           There are announcements and updates about the next Annual Meeting, as well as articles about the geography of the host city.<br>-->
-<!--           The Newsletter also contains announcements of upcoming events and funding opportunities, policy updates, member notices including department news and obituaries, and information about the latest geography publications.<br>-->
-<!--        </p>-->
-<!--        <br/>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="col-xs-7 col-xs-offset-2 ">-->
-<!--      <h4 class="cos-strong">Publications by Members</h4>-->
-<!--      <hr>-->
-<!--      <div class="cos-modal">-->
-<!--        <p>Publications by YGWG members will be updated from time to time.<br>-->
-<!--          <strong>July 2020</strong><br>-->
-<!--          <ul>-->
-<!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
-<!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
-<!--          </ul>-->
-<!--          <strong>June 2020</strong><br>-->
-<!--          <ul>-->
-<!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
-<!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
-<!--          </ul>-->
-<!--          <strong>May 2020</strong><br>-->
-<!--          <ul>-->
-<!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
-<!--            <li>Author 1, Author 2, Author 3. Title of the paper. Journal, volume, issue, page number</li>-->
-<!--          </ul>-->
-<!--        </p>-->
-<!--        <br/>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="col-xs-7 col-xs-offset-2 ">-->
-<!--      <h4 class="cos-strong">New Geography Books</h4>-->
-<!--      <hr>-->
-<!--      <div class="cos-modal">-->
-<!--        <p>Every season the YGWG compiles a list of newly published books in geography and related areas.<br><br>-->
-<!--          <strong>1<sup>st</sup> Season 2020</strong>-->
-<!--          <ul>-->
-<!--            <li>The Saguaro Cactus : A Natural History by David Yetman, Alberto Burquez, Kevin Hultine, and Michael Sanderson (University of Arizona Press 2020)</li>-->
-<!--            <li>Wild Blue Media: Thinking through Seawater by Melody Jue (Duke University Press 2020)</li>-->
-<!--            <li>Intimate Geopolitics: Love, Territory, and the Future on India’s Northern Threshold by Sara Smith (Rutgers University Press 2020)</li>-->
-<!--            <li>Panic City: Crime and the Fear Industries in Johannesburg by Martin J. Murray (Stanford University Press 2020)</li>-->
-<!--            <li>Assembling Moral Mobilities : Cycling, Cities and the Common Good by Nicholas A Scott (University of Nebraska Press 2020)</li>-->
-<!--          </ul>-->
-<!--        </p>-->
-<!--        <br/>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    &ndash;&gt;-->
-<!--        </div>-->
-        <div class="row cos-modal2" id="Journals">
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">Journals</h4>
+            <div class="col-xs-12 col-md-12">
                 <hr>
-                <div class="col-xs-12 col-md-12" >
-                    <div class="col-md-3 col-xs-12" >
-                        <br>
-                        <a href="https://www.journals.elsevier.com/global-environmental-change"><img class="img-responsive" th:src="@{/img/Journals/globalEnvironmentalChange.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-                        <br>
-                        <strong><a href="https://www.journals.elsevier.com/global-environmental-change">Global Environmental Change</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>:0959-3780<br>
-                            <label class="stronglabel">Impact Factor</label>: 10.466(2019)<br>
-                            <label class="stronglabel">Description</label>: Global Environmental Change is a peer-reviewed international journal publishing high
-                            quality, theoretically and empirically rigorous articles, which advance knowledge about the human and policy dimensions of
-                            global environmental change. The journal interprets global environmental change to mean the outcome of processes that are manifest
-                            in localities, but with consequences at multiple spatial, temporal and socio-political scales. The journal is interested in articles which
-                            have a significant social science component. <br>
-                        </p>
-                    </div>
+                <div class="col-md-3 col-xs-12">
+                    <a href="https://www.sciencedirect.com/journal/remote-sensing-of-environment"><img class="img-responsive" th:src="@{/img/Journals/RSE.jpg}" ></a>
                 </div>
-
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12" >
-                        <a href="https://journals.sagepub.com/home/dhg"><img class="img-responsive" th:src="@{/img/Journals/DialoguesinHumanGeography.png}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-
-                        <strong><a href="https://journals.sagepub.com/home/dhg">Dialogues in Human Geography</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 2043-8206<br>
-                            <label class="stronglabel">Impact Factor</label>: 10.231(2019)<br>
-                            <label class="stronglabel">Description</label>: The primary aim of Dialogues in Human Geography
-                            is to stimulate open and critical debate on the philosophical, methodological and pedagogic
-                            foundations of geographic thought and praxis. It publishes articles, with responses, which seek
-                            to critique present thinking and praxis and set the agenda for future avenues of geographic thought,
-                            empirical research and pedagogy. Dialogues is theoretical in orientation, forward looking, and seeks to
-                            publish original and innovative work that pushes the boundaries of geographical theory,
-                            praxis and pedagogy through a unique (in Geography) and innovative format of open peer commentary.<br>
-                        </p>
-                    </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="http://www.sciencedirect.com/science/journal/01436228">ISPRS Journal of Photogrammetry and Remote Sensing</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 0143-6228<br>
+                        <label class="stronglabel">Impact Factor</label>: 9.085(2019)<br>
+                        <label class="stronglabel">Description</label>: Remote Sensing of Environment (RSE) serves the Earth
+                        observation community with the publication of results on the theory, science, applications, and
+                        technology of remote sensing studies. Thoroughly interdisciplinary, RSE publishes on terrestrial,
+                        oceanic and atmospheric sensing. The emphasis of the journal is on biophysical and quantitative
+                        approaches to remote sensing at local to global scales.<br>
+                    </p>
                 </div>
+            </div>
 
-
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12" >
-                        <a href="https://www.sciencedirect.com/journal/earth-science-reviews"><img class="img-responsive" th:src="@{/img/Journals/Earth-Science Reviews.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-
-                        <strong><a href="https://www.sciencedirect.com/journal/earth-science-reviews">Earth-Science Reviews </a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 0012-8252<br>
-                            <label class="stronglabel">Impact Factor</label>: 9.724<br>
-                            <label class="stronglabel">Description</label>: Covering a much wider field than the usual specialist journals, Earth Science Reviews publishes review articles dealing with all aspects of Earth Sciences, and is an important vehicle for allowing readers to see their particular interest related to the Earth Sciences as a whole.<br>
-                        </p>
-                    </div>
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12"  >
+                    <a href="https://www.tandfonline.com/toc/recg20/current"><img class="img-responsive" th:src="@{/img/Journals/economicgeography.png}" ></a>
                 </div>
-
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12">
-                        <a href="https://www.sciencedirect.com/journal/remote-sensing-of-environment"><img class="img-responsive" th:src="@{/img/Journals/RSE.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="http://www.sciencedirect.com/science/journal/01436228">ISPRS Journal of Photogrammetry and Remote Sensing</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 0143-6228<br>
-                            <label class="stronglabel">Impact Factor</label>: 9.085(2019)<br>
-                            <label class="stronglabel">Description</label>: Remote Sensing of Environment (RSE) serves the Earth
-                            observation community with the publication of results on the theory, science, applications, and
-                            technology of remote sensing studies. Thoroughly interdisciplinary, RSE publishes on terrestrial,
-                            oceanic and atmospheric sensing. The emphasis of the journal is on biophysical and quantitative
-                            approaches to remote sensing at local to global scales.<br>
-                        </p>
-                    </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="https://www.tandfonline.com/toc/recg20/current">Economic Geography</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 2520-1417<br>
+                        <label class="stronglabel">Impact Factor</label>: 8.279(2019)<br>
+                        <label class="stronglabel">Description</label>: Economic Geography is an internationally
+                        peer-reviewed journal committed to publishing original research that makes leading-edge
+                        advances within and beyond the sub-discipline of economic geography. We publish high-quality,
+                        substantive work that is theoretically rich and informed by empirical evidence that deepens our understandings of
+                        the geographical drivers and implications of economic processes, broadly considered. We welcome submissions that focus
+                        on a wide range of topics, deploy primary evidence in support of theoretically significant interventions, and contribute
+                        key insights regarding pressing economic, social, development, and environmental questions and challenges. <br>
+                    </p>
                 </div>
+            </div>
 
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12"  >
-                        <a href="https://www.tandfonline.com/toc/recg20/current"><img class="img-responsive" th:src="@{/img/Journals/economicgeography.png}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="https://www.tandfonline.com/toc/recg20/current">Economic Geography</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 2520-1417<br>
-                            <label class="stronglabel">Impact Factor</label>: 8.279(2019)<br>
-                            <label class="stronglabel">Description</label>: Economic Geography is an internationally
-                            peer-reviewed journal committed to publishing original research that makes leading-edge
-                            advances within and beyond the sub-discipline of economic geography. We publish high-quality,
-                            substantive work that is theoretically rich and informed by empirical evidence that deepens our understandings of
-                            the geographical drivers and implications of economic processes, broadly considered. We welcome submissions that focus
-                            on a wide range of topics, deploy primary evidence in support of theoretically significant interventions, and contribute
-                            key insights regarding pressing economic, social, development, and environmental questions and challenges. <br>
-                        </p>
-                    </div>
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12" >
+                    <a href="https://www.sciencedirect.com/journal/remote-sensing-of-environment"><img class="img-responsive" th:src="@{/img/Journals/ISPRS.jpg}" ></a>
                 </div>
-
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12" >
-                        <a href="https://www.sciencedirect.com/journal/remote-sensing-of-environment"><img class="img-responsive" th:src="@{/img/Journals/ISPRS.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="https://www.isprs.org/">Remote Sensing of Environment</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 0034-4257<br>
-                            <label class="stronglabel">Impact Factor</label>: 7.319(2019)<br>
-                            <label class="stronglabel">Description</label>: The ISPRS Journal of Photogrammetry and Remote Sensing (P&RS) is the official journal of the International Society for Photogrammetry and Remote Sensing (ISPRS). The Journal provides a channel of communication for scientists and professionals in all countries working in the many disciplines that employ photogrammetry, remote sensing, spatial information systems, computer vision, and related fields. The Journal is designed to serve as a source reference and archive of advancements in these disciplines.<br>
-                        </p>
-                    </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="https://www.isprs.org/">Remote Sensing of Environment</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 0034-4257<br>
+                        <label class="stronglabel">Impact Factor</label>: 7.319(2019)<br>
+                        <label class="stronglabel">Description</label>: The ISPRS Journal of Photogrammetry and Remote Sensing (P&RS) is the official journal of the International Society for Photogrammetry and Remote Sensing (ISPRS). The Journal provides a channel of communication for scientists and professionals in all countries working in the many disciplines that employ photogrammetry, remote sensing, spatial information systems, computer vision, and related fields. The Journal is designed to serve as a source reference and archive of advancements in these disciplines.<br>
+                    </p>
                 </div>
+            </div>
 
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12" >
-                        <a href="https://journals.sagepub.com/home/phg"><img class="img-responsive" th:src="@{/img/Journals/Progress in Human Geography.png}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="https://journals.sagepub.com/home/phg">Progress in Human Geography</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 0309-1325<br>
-                            <label class="stronglabel">Impact Factor</label>: 6.766(2019)<br>
-                            <label class="stronglabel">Description</label>: Progress in Human Geography is the peer-review journal of choice for
-                            those wanting to know about the state of the art in all areas of human geography research - philosophical,
-                            theoretical, thematic, methodological or empirical. Concerned primarily with critical reviews of current research,
-                            PiHG enables a space for debate about questions, concepts and findings of formative influence in human geography. <br>
-                        </p>
-                    </div>
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12" >
+                    <a href="https://journals.sagepub.com/home/phg"><img class="img-responsive" th:src="@{/img/Journals/Progress in Human Geography.png}" ></a>
                 </div>
-
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12" >
-                        <a href="https://www.journals.elsevier.com/landscape-and-urban-planning"><img class="img-responsive" th:src="@{/img/Journals/landscapeandUrbanPlanning.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="https://www.journals.elsevier.com/landscape-and-urban-planning">Landscape and Urban Planning</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 0169-2046<br>
-                            <label class="stronglabel">Impact Factor</label>: 5.441(2019)<br>
-                            <label class="stronglabel">Description</label>: Landscape and Urban Planning is an international journal aimed at
-                            advancing conceptual, scientific, and applied understandings of landscape in order to promote sustainable
-                            solutions for landscape change. Landscapes are visible and integrative social-ecological systems with variable
-                            spatial and temporal dimensions. They have expressive aesthetic, natural, and cultural qualities that are perceived and valued by people
-                            in multiple ways and invite actions resulting in landscape change.  <br>
-                        </p>
-                    </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="https://journals.sagepub.com/home/phg">Progress in Human Geography</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 0309-1325<br>
+                        <label class="stronglabel">Impact Factor</label>: 6.766(2019)<br>
+                        <label class="stronglabel">Description</label>: Progress in Human Geography is the peer-review journal of choice for
+                        those wanting to know about the state of the art in all areas of human geography research - philosophical,
+                        theoretical, thematic, methodological or empirical. Concerned primarily with critical reviews of current research,
+                        PiHG enables a space for debate about questions, concepts and findings of formative influence in human geography. <br>
+                    </p>
                 </div>
+            </div>
 
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12"  >
-                        <a href="https://www.sciencedirect.com/journal/environmental-modelling-and-software"><img class="img-responsive" th:src="@{/img/Journals/ENVIRON MODELL SOFTW.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="https://www.isprs.org/">Environmental Modelling & Software</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 1364-8152<br>
-                            <label class="stronglabel">Impact Factor</label>: 4.807(2019)<br>
-                            <label class="stronglabel">Description</label>: Environmental Modelling & Software publishes contributions, in the form of research articles, reviews, introductory overviews, and position papers on advances in the area of environmental modelling and software. Our aim is to improve our capacity to represent, understand, predict or manage the behaviour of natural environmental systems, including air, water, and land components, at all practical scales, and to communicate those improvements to a wide scientific and professional audience.<br>
-                        </p>
-                    </div>
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12" >
+                    <a href="https://www.journals.elsevier.com/landscape-and-urban-planning"><img class="img-responsive" th:src="@{/img/Journals/landscapeandUrbanPlanning.jpg}" ></a>
                 </div>
-
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12" >
-                        <a href="https://www.journals.elsevier.com/computers-environment-and-urban-systems"><img class="img-responsive" th:src="@{/img/Journals/computers,EnvironmentandUrbanSystems.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="https://www.journals.elsevier.com/computers-environment-and-urban-systems">Computers, Environment and Urban Systems</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 0198-9715<br>
-                            <label class="stronglabel">Impact Factor</label>: 4.655(2019)<br>
-                            <label class="stronglabel">Description</label>: Computers, Environment and Urban Systems is an interdisciplinary journal publishing cutting-edge
-                            and innovative computer-based research on urban systems, systems of cities, and built and natural environments ,
-                            that privileges the geospatial perspective. <br>
-
-                        </p>
-                    </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="https://www.journals.elsevier.com/landscape-and-urban-planning">Landscape and Urban Planning</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 0169-2046<br>
+                        <label class="stronglabel">Impact Factor</label>: 5.441(2019)<br>
+                        <label class="stronglabel">Description</label>: Landscape and Urban Planning is an international journal aimed at
+                        advancing conceptual, scientific, and applied understandings of landscape in order to promote sustainable
+                        solutions for landscape change. Landscapes are visible and integrative social-ecological systems with variable
+                        spatial and temporal dimensions. They have expressive aesthetic, natural, and cultural qualities that are perceived and valued by people
+                        in multiple ways and invite actions resulting in landscape change.  <br>
+                    </p>
                 </div>
+            </div>
 
-
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12" >
-                        <a href="https://www.mdpi.com/journal/remotesensing"><img class="img-responsive" th:src="@{/img/Journals/remotesensing.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="https://www.isprs.org/">Remote Sensing</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 2072-4292<br>
-                            <label class="stronglabel">Impact Factor</label>: 4.509(2019)<br>
-                            <label class="stronglabel">Description</label>: Remote sensing is a technology that engages electromagnetic sensors to measure and monitor changes in the earth’s surface and atmosphere. Normally this is accomplished through the use of a satellite or aircraft. Remote Sensing, in its third edition, seamlessly connects the art and science of earth remote sensing with the latest interpretative tools and techniques of computer-aided image processing. Newly expanded and updated, this edition delivers more of the applied scientific theory and practical results that helped the previous editions earn wide acclaim and become classroom and industry standards.<br>
-
-                        </p>
-                    </div>
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12"  >
+                    <a href="https://www.sciencedirect.com/journal/environmental-modelling-and-software"><img class="img-responsive" th:src="@{/img/Journals/ENVIRON MODELL SOFTW.jpg}" ></a>
                 </div>
-
-
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12"  >
-
-                        <a href="https://www.tandfonline.com/toc/tjde20/current"><img class="img-responsive" th:src="@{/img/Journals/groRSL.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-
-                        <strong><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8859">IEEE Geoscience and Remote Sensing Letters</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 1545-598X<br>
-                            <label class="stronglabel">Impact Factor</label>: 3.833(2019)<br>
-                            <label class="stronglabel">Description</label> : IEEE Geoscience and Remote Sensing Letters (GRSL) is a monthly publication for short papers (maximum length 5 pages) addressing new ideas and formative concepts in remote sensing as well as important new and timely results and concepts. Papers should relate to the theory, concepts and techniques of science and engineering as applied to sensing the earth, oceans, atmosphere, and space, and the processing, interpretation, and dissemination of this information. The technical content of papers must be both new and significant. Experimental data must be complete and include sufficient description of experimental apparatus, methods, and relevant experimental conditions. GRSL encourages the incorporation of "extended objects" or "multimedia" such as animations to enhance the shorter papers.<br>
-                        </p>
-                    </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="https://www.isprs.org/">Environmental Modelling & Software</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 1364-8152<br>
+                        <label class="stronglabel">Impact Factor</label>: 4.807(2019)<br>
+                        <label class="stronglabel">Description</label>: Environmental Modelling & Software publishes contributions, in the form of research articles, reviews, introductory overviews, and position papers on advances in the area of environmental modelling and software. Our aim is to improve our capacity to represent, understand, predict or manage the behaviour of natural environmental systems, including air, water, and land components, at all practical scales, and to communicate those improvements to a wide scientific and professional audience.<br>
+                    </p>
                 </div>
+            </div>
 
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12" >
-                        <a href="https://www.tandfonline.com/toc/tgis20/current"><img class="img-responsive" th:src="@{/img/Journals/IJGIS.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center">
-
-                        <strong><a href="http://www.sciencedirect.com/science/journal/01436228">International Journal of Geographical Information Science</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 1365-8816<br>
-                            <label class="stronglabel">Impact Factor</label>: 3.733(2019)<br>
-                            <label class="stronglabel">Description</label>: The aim of International Journal of Geographical Information Science is to provide a forum for the exchange of original ideas, approaches, methods and experiences in the field of GIScience.
-                            International Journal of Geographical Information Science covers the following topics:Innovations and novel applications of GIScience in natural resources, social systems and the built environment Relevant developments in computer science, cartography, surveying, geography, and engineering Fundamental and computational issues of geographic information
-                            The design, implementation and use of geographical information for monitoring, prediction and decision making.<br>
-                        </p>
-                    </div>
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12" >
+                    <a href="https://www.journals.elsevier.com/computers-environment-and-urban-systems"><img class="img-responsive" th:src="@{/img/Journals/computers,EnvironmentandUrbanSystems.jpg}" ></a>
                 </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="https://www.journals.elsevier.com/computers-environment-and-urban-systems">Computers, Environment and Urban Systems</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 0198-9715<br>
+                        <label class="stronglabel">Impact Factor</label>: 4.655(2019)<br>
+                        <label class="stronglabel">Description</label>: Computers, Environment and Urban Systems is an interdisciplinary journal publishing cutting-edge
+                        and innovative computer-based research on urban systems, systems of cities, and built and natural environments ,
+                        that privileges the geospatial perspective. <br>
 
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12"  >
-                        <a href="http://www.sciencedirect.com/science/journal/01436228"><img class="img-responsive" th:src="@{/img/Journals/Applied Geography.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="http://www.sciencedirect.com/science/journal/01436228">Applied Geography</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 0143-6228<br>
-                            <label class="stronglabel">Impact Factor</label>: 3.508(2019)<br>
-                            <label class="stronglabel">Description</label>: Applied Geography is a journal devoted to the publication of research which utilizes geographic approaches (human, physical, nature-society and GIScience) to resolve human problems that have a spatial dimension. These problems may be related to the assessment, management and allocation of the world's physical and/or human resources. The underlying rationale of the journal is that only through a clear understanding of the relevant societal, physical, and coupled natural-humans systems can we resolve such problems.<br>
-                        </p>
-                    </div>
+                    </p>
                 </div>
+            </div>
 
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12"  >
-                        <a href="https://www.tandfonline.com/toc/tjde20/current"><img class="img-responsive" th:src="@{/img/Journals/IJDE.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="http://www.sciencedirect.com/science/journal/01436228">International Journal of Digital Earth</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 1753-8947<br>
-                            <label class="stronglabel">Impact Factor</label>: 3.097(2019)<br>
-                            <label class="stronglabel">Description</label>: International Journal of Digital Earth is a journal focusing on the theories, technologies, applications and societal implications of Digital Earth.
-                            International Journal of Digital Earth is the official journal of the International Society for Digital Earth.
-                            The journal is a response to the Digital Earth initiative and itsaim to improve social conditions, protect the environment, and support future sustainable development.<br>
-                        </p>
-                    </div>
+
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12" >
+                    <a href="https://www.mdpi.com/journal/remotesensing"><img class="img-responsive" th:src="@{/img/Journals/remotesensing.jpg}" ></a>
                 </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="https://www.isprs.org/">Remote Sensing</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 2072-4292<br>
+                        <label class="stronglabel">Impact Factor</label>: 4.509(2019)<br>
+                        <label class="stronglabel">Description</label>: Remote sensing is a technology that engages electromagnetic sensors to measure and monitor changes in the earth’s surface and atmosphere. Normally this is accomplished through the use of a satellite or aircraft. Remote Sensing, in its third edition, seamlessly connects the art and science of earth remote sensing with the latest interpretative tools and techniques of computer-aided image processing. Newly expanded and updated, this edition delivers more of the applied scientific theory and practical results that helped the previous editions earn wide acclaim and become classroom and industry standards.<br>
 
-                <div class="col-xs-12 col-md-12">
-                    <hr>
-                    <div class="col-md-3 col-xs-12"  >
-                        <a href="https://onlinelibrary.wiley.com/journal/15384632"><img class="img-responsive" th:src="@{/img/Journals/Geographical Analysis.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center" >
-                        <strong><a href="https://onlinelibrary.wiley.com/journal/15384632">Geographical Analysis</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 1538-4632<br>
-                            <label class="stronglabel">Impact Factor</label>: 3.097(2019)<br>
-                            <label class="stronglabel">Description</label>: Geographical Analysis publishes geographical theory, model building, and quantitative methods to geographers and scholars in a wide spectrum of related fields.
-
-                            First in its specialty area and one of the most frequently cited journals in geography,
-                            Geographical Analysis has, since 1969, published significant advances in geographical theory,
-                            model building, and quantitative methods to geographers and scholars in a wide spectrum of related fields.
-                            Traditionally, mathematical and nonmathematical articulations of geographical theory, and statements and discussions of
-                            the analytic paradigm are published in the journal. Spatial data analyses and spatial econometrics and statistics are strongly represented.<br>
-                        </p>
-                    </div>
+                    </p>
                 </div>
+            </div>
 
-                <div class="col-xs-12 col-md-12" style="margin-bottom: 2%">
-                    <hr>
-                    <div class="col-md-3 col-xs-12"   >
-                        <a href="https://www.tandfonline.com/toc/tagi20/current"><img class="img-responsive" th:src="@{/img/Journals/AnnualofGIS.jpg}" ></a>
-                    </div>
-                    <div class="m-fsz col-md-9 col-xs-12 m-center"  >
-                        <strong><a href="https://www.tandfonline.com/toc/tagi20/current">Annals of GIS</a></strong><br>
-                        <p>
-                            <label class="stronglabel">ISSN</label>: 1947-5683<br>
-                            <!--                            <label class="stronglabel">Impact Factor</label>: 3.097 (2019) <br>-->
-                            <label class="stronglabel">Description</label>: Annals of GIS  is an open access journal that publishes interdisciplinary research on theory, methods, development and applications in geo-information science.
-                            The journal aims to connect researchers in the region to one another and to the wider, international scientific community.<br>
-                        </p>
-                    </div>
+
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12"  >
+
+                    <a href="https://www.tandfonline.com/toc/tjde20/current"><img class="img-responsive" th:src="@{/img/Journals/groRSL.jpg}" ></a>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+
+                    <strong><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8859">IEEE Geoscience and Remote Sensing Letters</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 1545-598X<br>
+                        <label class="stronglabel">Impact Factor</label>: 3.833(2019)<br>
+                        <label class="stronglabel">Description</label> : IEEE Geoscience and Remote Sensing Letters (GRSL) is a monthly publication for short papers (maximum length 5 pages) addressing new ideas and formative concepts in remote sensing as well as important new and timely results and concepts. Papers should relate to the theory, concepts and techniques of science and engineering as applied to sensing the earth, oceans, atmosphere, and space, and the processing, interpretation, and dissemination of this information. The technical content of papers must be both new and significant. Experimental data must be complete and include sufficient description of experimental apparatus, methods, and relevant experimental conditions. GRSL encourages the incorporation of "extended objects" or "multimedia" such as animations to enhance the shorter papers.<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12" >
+                    <a href="https://www.tandfonline.com/toc/tgis20/current"><img class="img-responsive" th:src="@{/img/Journals/IJGIS.jpg}" ></a>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center">
+
+                    <strong><a href="http://www.sciencedirect.com/science/journal/01436228">International Journal of Geographical Information Science</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 1365-8816<br>
+                        <label class="stronglabel">Impact Factor</label>: 3.733(2019)<br>
+                        <label class="stronglabel">Description</label>: The aim of International Journal of Geographical Information Science is to provide a forum for the exchange of original ideas, approaches, methods and experiences in the field of GIScience.
+                        International Journal of Geographical Information Science covers the following topics:Innovations and novel applications of GIScience in natural resources, social systems and the built environment Relevant developments in computer science, cartography, surveying, geography, and engineering Fundamental and computational issues of geographic information
+                        The design, implementation and use of geographical information for monitoring, prediction and decision making.<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12"  >
+                    <a href="http://www.sciencedirect.com/science/journal/01436228"><img class="img-responsive" th:src="@{/img/Journals/Applied Geography.jpg}" ></a>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="http://www.sciencedirect.com/science/journal/01436228">Applied Geography</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 0143-6228<br>
+                        <label class="stronglabel">Impact Factor</label>: 3.508(2019)<br>
+                        <label class="stronglabel">Description</label>: Applied Geography is a journal devoted to the publication of research which utilizes geographic approaches (human, physical, nature-society and GIScience) to resolve human problems that have a spatial dimension. These problems may be related to the assessment, management and allocation of the world's physical and/or human resources. The underlying rationale of the journal is that only through a clear understanding of the relevant societal, physical, and coupled natural-humans systems can we resolve such problems.<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12"  >
+                    <a href="https://www.tandfonline.com/toc/tjde20/current"><img class="img-responsive" th:src="@{/img/Journals/IJDE.jpg}" ></a>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="http://www.sciencedirect.com/science/journal/01436228">International Journal of Digital Earth</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 1753-8947<br>
+                        <label class="stronglabel">Impact Factor</label>: 3.097(2019)<br>
+                        <label class="stronglabel">Description</label>: International Journal of Digital Earth is a journal focusing on the theories, technologies, applications and societal implications of Digital Earth.
+                        International Journal of Digital Earth is the official journal of the International Society for Digital Earth.
+                        The journal is a response to the Digital Earth initiative and itsaim to improve social conditions, protect the environment, and support future sustainable development.<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-12">
+                <hr>
+                <div class="col-md-3 col-xs-12"  >
+                    <a href="https://onlinelibrary.wiley.com/journal/15384632"><img class="img-responsive" th:src="@{/img/Journals/Geographical Analysis.jpg}" ></a>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center" >
+                    <strong><a href="https://onlinelibrary.wiley.com/journal/15384632">Geographical Analysis</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 1538-4632<br>
+                        <label class="stronglabel">Impact Factor</label>: 3.097(2019)<br>
+                        <label class="stronglabel">Description</label>: Geographical Analysis publishes geographical theory, model building, and quantitative methods to geographers and scholars in a wide spectrum of related fields.
+
+                        First in its specialty area and one of the most frequently cited journals in geography,
+                        Geographical Analysis has, since 1969, published significant advances in geographical theory,
+                        model building, and quantitative methods to geographers and scholars in a wide spectrum of related fields.
+                        Traditionally, mathematical and nonmathematical articulations of geographical theory, and statements and discussions of
+                        the analytic paradigm are published in the journal. Spatial data analyses and spatial econometrics and statistics are strongly represented.<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-12" style="margin-bottom: 2%">
+                <hr>
+                <div class="col-md-3 col-xs-12"   >
+                    <a href="https://www.tandfonline.com/toc/tagi20/current"><img class="img-responsive" th:src="@{/img/Journals/AnnualofGIS.jpg}" ></a>
+                </div>
+                <div class="m-fsz col-md-9 col-xs-12 m-center"  >
+                    <strong><a href="https://www.tandfonline.com/toc/tagi20/current">Annals of GIS</a></strong><br>
+                    <p>
+                        <label class="stronglabel">ISSN</label>: 1947-5683<br>
+                        <!--                            <label class="stronglabel">Impact Factor</label>: 3.097 (2019) <br>-->
+                        <label class="stronglabel">Description</label>: Annals of GIS  is an open access journal that publishes interdisciplinary research on theory, methods, development and applications in geo-information science.
+                        The journal aims to connect researchers in the region to one another and to the wider, international scientific community.<br>
+                    </p>
+                </div>
 
 
 
@@ -1399,97 +1427,97 @@
     </div>
     -->
         </div>
+    </div>
+
+    <!--Awards-->
+    <div class="row" id="Awards">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">Best Paper Awards</h4>
+            <hr>
+            <div class="cos-modal">
+                <p>The Best Paper Award (BPA) is presented to the individual(s) judged by an awards committee to have written the best paper appearing in the annual conference proceedings.<br></p>
+                <p>Three BPAs will be awarded at each annual conference. Notice of BPA application will be announced along with the Annual Conference Notice.<br></p>
+                <p>All applicants must be YGWG members. Membership Application Form can be found under the page of "Join Us" on this website. Membership applicants need to fill the forms and email the forms to the corresponding regional contact person.<br></p>
+            </div>
+            <br>
+        </div>
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">Excellent Young Scholar Award</h4>
+            <hr>
+            <div class="cos-modal">
+                <p>The Young Scholar Award (YSA) is presented to the individual(s) judged by an awards committee recognize his or her outstanding scientific achievements and contributions. Applicants needs to hold a PhD degree, and within seven years of graduation.<br></p>
+                <p>Two YSAs will be awarded each year.<br></p>
+                <p>Please be aware that the deadline for submitting application for each year's YSA is June 1st 2021. Details regarding requirements and documents for application will be announced soon on this website.<br>
+                <p>All applicants must be YGWG members. Membership Application Form can be found under the page of "Join Us" on this website. Membership applicants need to fill the forms and email the forms to the corresponding regional contact person.<br></p>
+            </div>
+            <br>
+        </div>
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">Distinguished Service Award</h4>
+            <hr>
+            <div class="cos-modal">
+                <p>The Distinguished Service Award (DSA) is conferred by the working group on members of the working group who have given long and meritorious service to the working group or for particularly meritorious service of a shorter duration.<br></p>
+                <p>One DSA will be awarded every two years.<br></p>
+                <p> Please be aware that the deadline for submitting application for each year's DSA is June 1st 2022. Details regarding requirements and documents for application will be announced soon on this website.<br><br></p>
+            </div>
+            <br>
         </div>
 
-        <!--Awards-->
-        <div class="row" id="Awards">
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">Best Paper Awards</h4>
-                <hr>
-                <div class="cos-modal">
-                    <p>The Best Paper Award (BPA) is presented to the individual(s) judged by an awards committee to have written the best paper appearing in the annual conference proceedings.<br></p>
-                    <p>Three BPAs will be awarded at each annual conference. Notice of BPA application will be announced along with the Annual Conference Notice.<br></p>
-                    <p>All applicants must be YGWG members. Membership Application Form can be found under the page of "Join Us" on this website. Membership applicants need to fill the forms and email the forms to the corresponding regional contact person.<br></p>
-                </div>
-                <br>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">Excellent Young Scholar Award</h4>
-                <hr>
-                <div class="cos-modal">
-                    <p>The Young Scholar Award (YSA) is presented to the individual(s) judged by an awards committee recognize his or her outstanding scientific achievements and contributions. Applicants needs to hold a PhD degree, and within seven years of graduation.<br></p>
-                    <p>Two YSAs will be awarded each year.<br></p>
-                    <p>Please be aware that the deadline for submitting application for each year's YSA is June 1st 2021. Details regarding requirements and documents for application will be announced soon on this website.<br>
-                    <p>All applicants must be YGWG members. Membership Application Form can be found under the page of "Join Us" on this website. Membership applicants need to fill the forms and email the forms to the corresponding regional contact person.<br></p>
-                </div>
-                <br>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">Distinguished Service Award</h4>
-                <hr>
-                <div class="cos-modal">
-                    <p>The Distinguished Service Award (DSA) is conferred by the working group on members of the working group who have given long and meritorious service to the working group or for particularly meritorious service of a shorter duration.<br></p>
-                    <p>One DSA will be awarded every two years.<br></p>
-                    <p> Please be aware that the deadline for submitting application for each year's DSA is June 1st 2022. Details regarding requirements and documents for application will be announced soon on this website.<br><br></p>
-                </div>
-                <br>
-            </div>
-
-        </div>
+    </div>
 
 
-        <!-- Links-->
-        <!-- <div class="row" id="Links">
-            <div class="col-xs-7 col-xs-offset-2 ">
-                <div class="cos-modal">
-                    <i class="fa fa-paperclip"><a href="https://igu-online.org/" target="_blank"> International
-                            Geographical Union (IGU):https://igu-online.org/</a></i><br><br>
-                    <i class="fa fa-paperclip"><a href="https://www.seaga.info/" target="_blank"> The Southeast Asian
-                            Geography Association (SEAGA):https://www.seaga.info/</a></i><br><br>
-                    <i class="fa fa-paperclip"><a href="http://www.gsc.org.cn/channel.aspx?id=1" target="_blank"> The
-                            Geographical Society of China(GSC):http://www.gsc.org.cn/channel.aspx?id=1</a></i><br><br>
-                    <i class="fa fa-paperclip"><a href="" target="_blank"> Geographical Association:To be
-                            determined</a></i><br><br>
-                    <p>More links:To be determined...</p>
-                </div>
+    <!-- Links-->
+    <!-- <div class="row" id="Links">
+        <div class="col-xs-7 col-xs-offset-2 ">
+            <div class="cos-modal">
+                <i class="fa fa-paperclip"><a href="https://igu-online.org/" target="_blank"> International
+                        Geographical Union (IGU):https://igu-online.org/</a></i><br><br>
+                <i class="fa fa-paperclip"><a href="https://www.seaga.info/" target="_blank"> The Southeast Asian
+                        Geography Association (SEAGA):https://www.seaga.info/</a></i><br><br>
+                <i class="fa fa-paperclip"><a href="http://www.gsc.org.cn/channel.aspx?id=1" target="_blank"> The
+                        Geographical Society of China(GSC):http://www.gsc.org.cn/channel.aspx?id=1</a></i><br><br>
+                <i class="fa fa-paperclip"><a href="" target="_blank"> Geographical Association:To be
+                        determined</a></i><br><br>
+                <p>More links:To be determined...</p>
             </div>
         </div>
- -->
+    </div>
+-->
 
-        <!-- Jobs&opportunities -->
-        <div class="row" id="JobsOpportunities">
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <div class="cos-modal">
-                    <strong>Postdoctoral  Research Position in Department of Geographic Science</strong>
-                    <hr>
-                    <p>Beijing Normal University<br>Zhuhai, China</p>
-                    <button class="btn btn-success" type="button"><a href="https://rsgyy.bnu.edu.cn/yjjg/gtkjghybdcyjzx/gtrczp/97750.html" target="_blank" style="color: white; text-decoration: none;">View</a></button>
-                </div>
-                <br><br>
+    <!-- Jobs&opportunities -->
+    <div class="row" id="JobsOpportunities">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <div class="cos-modal">
+                <strong>Postdoctoral  Research Position in Department of Geographic Science</strong>
+                <hr>
+                <p>Beijing Normal University<br>Zhuhai, China</p>
+                <button class="btn btn-success" type="button"><a href="https://rsgyy.bnu.edu.cn/yjjg/gtkjghybdcyjzx/gtrczp/97750.html" target="_blank" style="color: white; text-decoration: none;">View</a></button>
             </div>
+            <br><br>
+        </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <div class="cos-modal">
-                    <strong>Postdoctoral Research Position in Department of Computer Science and Engineering at ZJNU</strong>
-                    <hr>
-                    <p>Zhejiang Normal University<br>Jinhua, China</p>
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <div class="cos-modal">
+                <strong>Postdoctoral Research Position in Department of Computer Science and Engineering at ZJNU</strong>
+                <hr>
+                <p>Zhejiang Normal University<br>Jinhua, China</p>
 
-                    <button class="btn btn-success" type="button"><a href="https://www.researchgate.net/job/944883_Postdoctoral_Research_Position_in_Department_of_Computer_Science_and_Engineering_at_ZJNU" target="_blank" style="color: white; text-decoration: none;">View</a></button>
-                </div>
-                <br><br>
+                <button class="btn btn-success" type="button"><a href="https://www.researchgate.net/job/944883_Postdoctoral_Research_Position_in_Department_of_Computer_Science_and_Engineering_at_ZJNU" target="_blank" style="color: white; text-decoration: none;">View</a></button>
             </div>
+            <br><br>
+        </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <div class="cos-modal">
-                    <strong>Doctoral Student in urban sustainability science</strong>
-                    <hr>
-                    <p>University of Helsinki<br>Helsinki, Finland</p>
-                    <button class="btn btn-success" type="button"><a href="https://www.helsinki.fi/en/open-positions/doctoral-student-in-urban-sustainability-science" target="_blank" style="color: white;text-decoration: none;">View</a></button>
-                </div>
-                <br><br>
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <div class="cos-modal">
+                <strong>Doctoral Student in urban sustainability science</strong>
+                <hr>
+                <p>University of Helsinki<br>Helsinki, Finland</p>
+                <button class="btn btn-success" type="button"><a href="https://www.helsinki.fi/en/open-positions/doctoral-student-in-urban-sustainability-science" target="_blank" style="color: white;text-decoration: none;">View</a></button>
             </div>
+            <br><br>
+        </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
             <div class="cos-modal">
                 <strong>Lecturer in Geographical Information Science</strong>
                 <hr>
@@ -1497,9 +1525,9 @@
                 <button class="btn btn-success" type="button"><a href="https://hrwebapp.qub.ac.uk/tlive_webrecruitment/wrd/run/ETREC107GF.open?VACANCY_ID=070278DjjB&WVID=6273090Lgx&LANG=USA" target="_blank" style="color: white;text-decoration: none;">View</a></button>
             </div>
             <br><br>
-            </div>
+        </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
             <div class="cos-modal">
                 <strong>Vacancy of Academic Posts for the field of Land Resources Planning at National Chengchi University, TAIWAN, China</strong>
                 <hr>
@@ -1507,9 +1535,9 @@
                 <button class="btn btn-success" type="button"><a href="https://www.researchgate.net/job/945363_Vacancy_of_Academic_Posts_for_the_field_of_Land_Resources_Planning_at_National_Chengchi_University_TAIWAN" target="_blank" style="color: white;text-decoration: none;">View</a></button>
             </div>
             <br><br>
-            </div>
+        </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
             <div class="cos-modal">
                 <strong>Assistant Professor in Big Data Science for Natural Resources</strong>
                 <hr>
@@ -1517,9 +1545,9 @@
                 <button class="btn btn-success" type="button"><a href="https://www.utwente.nl/en/organisation/careers/!/2020-36/assistant-professor-in-big-data-science-for-natural-resources?utm_source=researchgate&utm_medium=xml&utm_campaign=hr-researchgate-vacancy-xml" target="_blank" style="color: white;text-decoration: none;">View</a></button>
             </div>
             <br><br>
-            </div>
+        </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
             <div class="cos-modal">
                 <strong>Our Earth Science Group has vacancies for Two Postdocs Vacancy number 1639</strong>
                 <hr>
@@ -1527,9 +1555,9 @@
                 <button class="btn btn-success" type="button"><a href="https://www.researchgate.net/job/945077_Our_Earth_Science_Group_has_vacancies_for_Two_Postdocs_Vacancy_number_1639" target="_blank" style="color: white;text-decoration: none;">View</a></button>
             </div>
             <br><br>
-            </div>
+        </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
             <div class="cos-modal">
                 <strong>Group Leader Position in Geochemistry of Surface Waters (Tenure Track)</strong>
                 <hr>
@@ -1537,9 +1565,9 @@
                 <button class="btn btn-success" type="button"><a href="https://apply.refline.ch/673277/0806/pub/5/index.html" target="_blank" style="color: white;text-decoration: none;">View</a></button>
             </div>
             <br><br>
-            </div>
+        </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
             <div class="cos-modal">
                 <strong>Group Leader Position in Geochemistry of Surface Waters (Tenure Track)</strong>
                 <hr>
@@ -1547,101 +1575,101 @@
                 <button class="btn btn-success" type="button"><a href="https://apply.refline.ch/673277/0806/pub/5/index.html" target="_blank" style="color: white;text-decoration: none;">View</a></button>
             </div>
             <br>
-            </div>
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 cos-modal">
+        </div>
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 cos-modal">
             <br>
             <i class="fa fa-link"><a href="https://www.researchgate.net/jobs?page=1&regions=" target="_blank"> More Information</a></i>
-            </div>
-
         </div>
 
-        <!--ContactUs-->
-        <div class="row" id="ContactUs">
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">CONTACT INFORMATION</h4>
-                <hr>
-                <div class="cos-modal">
-                    <ul>
-                        <li>
-                            <strong>Prof. Min Chen</strong>
-                            <p>Chairman ,&nbsp; Professor
-                            </p>
-                            <strong>Address:</strong>
-                            <p>Nanjing Normal University<br>
-                                1 Wenyuan Road, Nanjing, Jiangsu, 210023, China<br>
-                            </p>
-                            <strong>E-mail:</strong><br>
-                            <a href="mailto:chenmin0902@163.com" style="color: orange;"> chenmin0902@163.com	</a><br>
-                            </p>
-                        </li>
-                        <li>
-                            <strong>Dr. Li He</strong>
-                            <p>Secretary General ,&nbsp;Associate Professor
-                            </p>
-                            <strong>Address:</strong>
-                            <p>Xi'an Jiaotong University<br>
-                                28 Xianning Road West, Xi'an, Shaanxi, 710049, China<br>
-                            </p>
-                            <strong>E-mail:</strong><br>
-                            <a href="mailto:lihegeo@xjtu.edu.cn" style="color: orange;"> lihegeo@xjtu.edu.cn	</a><br><br>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-               <!--  <h4 class="cos-strong">LOCATION MAP</h4>
-                <hr>
-                <div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div> -->
-            </div>
+    </div>
 
-            <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                <h4 class="cos-strong">Send Message</h4>
-                <hr>
-                <div class="cos-modal col-xs-8">
-                    <div class="form-group">
-                        <label for="CEmail">Email</label>
-                        <input type="email" class="form-control" id="CEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div> <br>
-                    <div class="form-group">
-                        <label for="CName">Name</label>
-                        <input type="text" class="form-control" id="CName" placeholder="Enter Name">
-                    </div><br>
-                    <div class="form-group">
-                        <label for="Cmessage">Message</label>
-                        <textarea type="text" class="form-control" id="Cmessage" placeholder="Enter Message" style="white-space: nowrap;"></textarea>
-                    </div>
-                    <br>
-                    <button  id="contactusemail" class="btn
+    <!--ContactUs-->
+    <div class="row" id="ContactUs">
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">CONTACT INFORMATION</h4>
+            <hr>
+            <div class="cos-modal">
+                <ul>
+                    <li>
+                        <strong>Prof. Min Chen</strong>
+                        <p>Chairman ,&nbsp; Professor
+                        </p>
+                        <strong>Address:</strong>
+                        <p>Nanjing Normal University<br>
+                            1 Wenyuan Road, Nanjing, Jiangsu, 210023, China<br>
+                        </p>
+                        <strong>E-mail:</strong><br>
+                        <a href="mailto:chenmin0902@163.com" style="color: orange;"> chenmin0902@163.com	</a><br>
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Dr. Li He</strong>
+                        <p>Secretary General ,&nbsp;Associate Professor
+                        </p>
+                        <strong>Address:</strong>
+                        <p>Xi'an Jiaotong University<br>
+                            28 Xianning Road West, Xi'an, Shaanxi, 710049, China<br>
+                        </p>
+                        <strong>E-mail:</strong><br>
+                        <a href="mailto:lihegeo@xjtu.edu.cn" style="color: orange;"> lihegeo@xjtu.edu.cn	</a><br><br>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <!--  <h4 class="cos-strong">LOCATION MAP</h4>
+             <hr>
+             <div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div> -->
+        </div>
+
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+            <h4 class="cos-strong">Send Message</h4>
+            <hr>
+            <div class="cos-modal col-xs-8">
+                <div class="form-group">
+                    <label for="CEmail">Email</label>
+                    <input type="email" class="form-control" id="CEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div> <br>
+                <div class="form-group">
+                    <label for="CName">Name</label>
+                    <input type="text" class="form-control" id="CName" placeholder="Enter Name">
+                </div><br>
+                <div class="form-group">
+                    <label for="Cmessage">Message</label>
+                    <textarea type="text" class="form-control" id="Cmessage" placeholder="Enter Message" style="white-space: nowrap;"></textarea>
+                </div>
+                <br>
+                <button  id="contactusemail" class="btn
                                                          btn-primary
                                                          green-bg">Submit</button>
-                    <br>
-                    <p  id="successfulcontactus"></p>
-                </div>
+                <br>
+                <p  id="successfulcontactus"></p>
             </div>
         </div>
-
     </div>
 
+</div>
 
 
-    <!-- foot1 -->
-    <div class="row " >
-        <hr style="margin: 0">
-        <div class="col-md-offset-2 col-md-2 col-xs-3 col-xs-offset-1 text-left" style="text-align: left;" >
-          <a href="http://www.aga-ygwg.com/" target="_blank"><img class="img-responsive" src="img/logo/KeyLogo.png" ></a>
-        </div>
 
-        <div class="col-md-2 col-md-offset-1 col-xs-6"  >
-            <br>
-          <a href="http://www.gsc.org.cn/" target="_blank"><img class="img-responsive" src="img/logo/gsc.png" ></a>
-        </div>
+<!-- foot1 -->
+<div class="row " >
+    <hr style="margin: 0">
+    <div class="col-md-offset-2 col-md-2 col-xs-3 col-xs-offset-1 text-left" style="text-align: left;" >
+        <a href="http://www.aga-ygwg.com/" target="_blank"><img class="img-responsive" src="img/logo/KeyLogo.png" ></a>
     </div>
 
-    <!-- foot2 -->
-    <div class='container-fluid footer-container text-center' style="background-color: #201f23;" >
-        <span style="font-family:arial; color: white;font-size: 0.8rem;">Copyright &copy;2020 NNU</span>
-
+    <div class="col-md-2 col-md-offset-1 col-xs-6"  >
+        <br>
+        <a href="http://www.gsc.org.cn/" target="_blank"><img class="img-responsive" src="img/logo/gsc.png" ></a>
     </div>
+</div>
+
+<!-- foot2 -->
+<div class='container-fluid footer-container text-center' style="background-color: #201f23;" >
+    <span style="font-family:arial; color: white;font-size: 0.8rem;">Copyright &copy;2020 NNU</span>
+
+</div>
 
 </body>
 </html>

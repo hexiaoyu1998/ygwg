@@ -24,7 +24,7 @@ public class UserInController {
     {
         HttpSession session=request.getSession();
         session.setMaxInactiveInterval(60*60);
-        MemberEntity memberEntity= (MemberEntity) memberDao.findById(request);
+        MemberEntity memberEntity= (MemberEntity) memberDao.findByMemberId(request);
 
         if(memberEntity==null){
             //不是会员

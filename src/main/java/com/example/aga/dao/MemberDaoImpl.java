@@ -28,7 +28,7 @@ public class MemberDaoImpl implements MemberDao{
     @Override
     public Object findandsetId(HttpServletRequest request) {
         String memberId=request.getParameter("memberId");
-        Query query = new Query(Criteria.where("_id").is(memberId));
+        Query query = new Query(Criteria.where("memberId").is(memberId));
         MemberEntity member = mongoTemplate.findOne(query, MemberEntity.class);
         if(member==null){
             return "The member ID does not exist!";
@@ -55,11 +55,23 @@ public class MemberDaoImpl implements MemberDao{
         return null;
     }
 
+    @Override
+    public Object findByMemberId(HttpServletRequest request){
+
+        String memberId=request.getParameter("memberId");
+        if(memberId!=null)
+        {
+            Query query=new Query(Criteria.where("memberId").is(memberId));
+            return mongoTemplate.findOne(query,MemberEntity.class);
+        }
+        return null;
+    }
+
     @SneakyThrows
     @Override
     public Object reNew(HttpServletRequest request) {
         String memberId= (String) request.getSession().getAttribute("memberId");
-        Query query = new Query(Criteria.where("_id").is(memberId));
+        Query query = new Query(Criteria.where("memberId").is(memberId));
         MemberEntity memberEntity=mongoTemplate.findOne(query,MemberEntity.class);
 
 

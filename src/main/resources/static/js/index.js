@@ -58,6 +58,8 @@ $(".nav-item").click(function(){
         nav_click();
         $($(this).children("a").data("href")).fadeIn();
         console.log($(this).children("a"));
+        // document.getElementsByTagName("title")[0].innerText=this.innerText.trim()+" - YGWG ";
+        document.getElementsByTagName("title")[0].innerText=this.children[1].children[0].innerText.trim()+" - YGWG ";
     })
 
 

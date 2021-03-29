@@ -107,6 +107,14 @@ $(function (){
                     }
                     $.post("/ygwg/user/register",dataregister,function (result){
                         $("#registerinfo").text(result);
+                        if(result=="Registered successfully!")
+                          setTimeout(function () {
+                              $("#loginText").trigger("click");
+                              $("#loginAccount").val(userName);
+                              $("#loginPassword").val("");
+                          },1500);
+
+
 
                     })
 

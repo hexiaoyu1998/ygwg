@@ -25,7 +25,8 @@ public class UserInController {
         HttpSession session=request.getSession();
         session.setMaxInactiveInterval(60*60);
         MemberEntity memberEntity= (MemberEntity) memberDao.findByMemberId(request);
-
+//        一小时自动退出登陆
+        session.setMaxInactiveInterval(60*60);
         if(memberEntity==null){
             //不是会员
             session.setAttribute("userName",request.getParameter("userName"));

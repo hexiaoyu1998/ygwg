@@ -1,11 +1,28 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost/Ygwguser
+      uri: mongodb://localhost:59349/Ygwguser
   thymeleaf:
     cache: false
+  mail:
+#    host: ssl://smtp.163.com
+    host: smtp.163.com
+    username: xiaoyuhe1121@163.com
+    password: JWQIDVJAMJJGQXLJ
+#    properties:
+#    socketFactory:
+#      class: javax.net.ssl.SSLSocketFactory
+#      port: 465
+
+    port: 465
+    protocol: smtp
+
 
 server:
   port: 8083
   servlet:
     context-path: /ygwg
+
+logging:
+  file:
+    path: /home/log

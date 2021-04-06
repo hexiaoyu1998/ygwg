@@ -188,8 +188,106 @@ $(function (){
         $(this).addClass("line-bottom");
         $("#loginText").removeClass("line-bottom");
         $("#information").style.borderLeft=$("#register").style.borderLeft;
+    });
+
+    $("#sendCodeBtn").click(
+        function sendCode(){
+
+            var vertiEmail = $("#VerificationEmail").val();
+
+            if(isEmpty(vertiEmail)){
+
+                alert("Please input a correct Email address!");
+            }
+            else{
+                if(isEmail(vertiEmail)){
+                    $.ajax({
+                        url: '/ygwg/user/sendCode',
+                        type: 'post',
+                        data: {
+                            email: vertiEmail
+                        },
+                        success: (result) => {
+                            if(result =="suc"){
+                               alert("Verification code has been sent to your email. If you can not find the email, please check the spam box.");
+                            }
+                            else if (result == "no user"){
+                                alert("Email does not exist, please check again or register a new account.");
+                            }
+                            else {
+                                alert(result);
+                            }
+                        },
+                        error: function (e) {
+                            alert(e);
+                        }
+                    })
+                }
+                else
+                {
+                    //邮箱不符合规范
+                    alert("Please input a correct Email address!");
+                }
+            }
+        return false;
+
+        }
+    );
+
+    $("#resetPasswordBtn").click(function () {
+        var vertiEmail = $("#VerificationEmail").val();
+        var vertiCode = $("#VerificationCode").val();
+        var vertiPassword = $("#NewPassword").val();
+
+        if(isEmpty(vertiEmail)){
+            alert('Please input a correct Email address!');
+        }else if(isEmpty(vertiCode)){
+            alert("Please input a correct Verification Code!");
+        }else if(isEmpty(vertiPassword)){
+            alert("Please input a correct new password!");
+        }else if(!isPwdvalidate(vertiPassword)){
+            alert("Make sure the password at least 8 characters including a number and a lowercase letter.");
+        }else if(!isEmail(vertiEmail)){
+            alert("Please input a correct Email address!");
+        }else{
+
+            $.ajax({
+                url: '/ygwg/user/resetPassword',
+                type: 'post',
+                data: {
+                    email:vertiEmail,
+                    code: vertiCode,
+                    newPass: vertiPassword,
+                },
+                success:(result)=>{
+                    if(result == 'suc'){
+                        alert("Reset password successfully!");
+                        setTimeout(function () {
+                            location.reload();
+                        },1000);
+
+                    }
+                    else {
+                        alert("Failed to reset password, Please register your account or send verification code!");
+                        return false;
+                    }
+                }
+            });
+        }
+
+
     })
+
+    $("#myModal").on("hiden.bs.modal",function (){
+
+        $(this).removeData("bs.modal");
+
+    });
+
+
+
 
 
 
 });
+//    找回密码
